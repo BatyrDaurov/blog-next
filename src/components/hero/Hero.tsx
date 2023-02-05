@@ -14,10 +14,10 @@ const Hero = (props: Props) => {
           On this blog I share tips and tricks, frameworks, projects, tutorials,
           etc Make sure you subscribe to get the latest updates
         </p>
-        <div className={`${s.mail} ${s.hero__sending}`}>
+        <form action="" className={`${s.mail} ${s.hero__sending}`}>
           <InputMail placeholder="Enter your email here...." />
           <PrimaryButton>Subscribe</PrimaryButton>
-        </div>
+        </form>
       </div>
       <div className={s.hero__banner}>
         <Image src="hero.svg" width={370} height={435} alt="hero" />

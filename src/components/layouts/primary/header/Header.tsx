@@ -12,7 +12,7 @@ type Props = {
 const Header = ({ links }: Props) => {
   return (
     <header className={s.header}>
-      <div className={`${s.header__container} ${s.container}`}>
+      <div className={s.header__container}>
         <div className={`${s.logo} ${s.header__logo}`}>
           <span className={s.logo__sup}>Batyr</span>
           <span className={s.logo__sub}>.blog</span>

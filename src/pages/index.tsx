@@ -5,7 +5,9 @@ const Home: NextPage = () => {
   return (
     <>
       <PrimaryLayout>
-        <Hero />
+        <main>
+          <Hero />
+        </main>
       </PrimaryLayout>
     </>
   );
