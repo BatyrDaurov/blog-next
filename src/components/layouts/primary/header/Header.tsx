@@ -12,17 +12,23 @@ type Props = {
 const Header = ({ links }: Props) => {
   return (
     <header className={s.header}>
-      <div className={`${s.logo} ${s.header__logo}`}>
-        <span className={s.logo__sup}>Batyr</span>
-        <span className={s.logo__sub}>.Blog</span>
+      <div className={`${s.header__container} ${s.container}`}>
+        <div className={`${s.logo} ${s.header__logo}`}>
+          <span className={s.logo__sup}>Batyr</span>
+          <span className={s.logo__sub}>.blog</span>
+        </div>
+        <nav className={s.header__nav}>
+          {links.map((el: LinkType) => (
+            <Link className={s.header__link} key={el.url} href={el.url}>
+              {el.label}
+            </Link>
+          ))}
+          <button className={`btn-reset ${s.header__btn}`}>
+            <img src="icons/coffee.svg" aria-hidden="true" />
+            Buy Me a Coffee
+          </button>
+        </nav>
       </div>
-      <nav className={`${s.nav} ${s.header__nav}`}>
-        {links.map((el: LinkType) => (
-          <Link key={el.url} href={el.url}>
-            {el.label}
-          </Link>
-        ))}
-      </nav>
     </header>
   );
 };
