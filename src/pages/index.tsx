@@ -1,10 +1,12 @@
 import type { NextPage } from 'next';
-import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
+import { Hero, PrimaryLayout } from '../components';
 
 const Home: NextPage = () => {
   return (
     <>
-      <PrimaryLayout>App</PrimaryLayout>
+      <PrimaryLayout>
+        <Hero />
+      </PrimaryLayout>
     </>
   );
 };
