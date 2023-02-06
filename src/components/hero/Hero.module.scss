@@ -1,0 +1,43 @@
+.hero {
+  padding-bottom: 6px;
+  min-height: 900px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // flex-wrap: wrap;
+  gap: 2rem;
+  &__info {
+    max-width: 655px;
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 81px;
+    text-transform: capitalize;
+    color: var(--text-color);
+  }
+  &__text {
+    position: relative;
+    margin: 0;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #9a9494;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -2px;
+      display: block;
+      height: calc(100% + 6px);
+      width: 3px;
+      background-color: var(--text-color);
+    }
+  }
+}
