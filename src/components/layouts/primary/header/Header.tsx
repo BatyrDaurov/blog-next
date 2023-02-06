@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import s from './Header.module.scss';
 
@@ -24,7 +25,7 @@ const Header = ({ links }: Props) => {
             </Link>
           ))}
           <button className={`btn-reset ${s.header__btn}`}>
-            <img src="icons/coffee.svg" aria-hidden="true" />
+            <Image src="icons/coffee.svg" aria-hidden="true" alt="" />
             Buy Me a Coffee
           </button>
         </nav>

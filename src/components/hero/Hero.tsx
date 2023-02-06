@@ -3,9 +3,7 @@ import { PrimaryButton } from '../../UI/buttons';
 import { InputMail } from '../../UI/inputs';
 import s from './Hero.module.scss';
 
-type Props = {};
-
-const Hero = (props: Props) => {
+const Hero = () => {
   return (
     <section className={s.hero}>
       <div className={`container ${s.hero__container}`}>

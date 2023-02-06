@@ -2,8 +2,6 @@ import { PrimaryButton } from '../../../../UI/buttons';
 import ArticlesList from '../articles-list/ArticlesList';
 import s from './Articles.module.scss';
 
-type Props = {};
-
 export type Post = {
   img: string;
   title: string;
@@ -112,7 +110,7 @@ const posts = [
   },
 ];
 
-const Articles = (props: Props) => {
+const Articles = () => {
   return (
     <section className={s.articles}>
       <div className={`container ${s.articles__posts}`}>
