@@ -1,14 +1,19 @@
 .hero {
   padding-bottom: 6px;
-  min-height: 900px;
+  height: calc(500px + 45vh);
+  background-color: #eff0f3;
+  background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='%23D2D6DB'/%3E%3C/svg%3E");
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  // flex-wrap: wrap;
-  gap: 2rem;
   &__info {
     max-width: 655px;
+  }
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    // flex-wrap: wrap;
   }
   &__title {
     margin: 0;
@@ -38,6 +43,14 @@
       height: calc(100% + 6px);
       width: 3px;
       background-color: var(--text-color);
+    }
+  }
+  &__sending {
+    max-width: 610px;
+    display: flex;
+    gap: 20px;
+    input {
+      flex: 1 1 auto;
     }
   }
 }

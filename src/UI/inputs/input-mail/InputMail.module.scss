@@ -1,0 +1,21 @@
+.input {
+  font-family: 'Plus Jakarta Sans';
+  padding: 0 25px;
+  min-height: 67px;
+
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+
+  border-radius: 8px;
+  color: #c0c0c0;
+  background-color: #fffffe;
+  border: 1px solid #d1d1d1;
+  transition: 0.15s linear;
+  &[type='email'] {
+    color: #000;
+  }
+  &:hover {
+    border: 1px solid #7c7c7c;
+  }
+}

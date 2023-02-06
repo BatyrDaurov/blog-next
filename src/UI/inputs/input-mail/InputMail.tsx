@@ -5,7 +5,13 @@ type Props = {
 };
 
 const InputMail = ({ placeholder }: Props) => {
-  return <input className={s.input} type="email" placeholder={placeholder} />;
+  return (
+    <input
+      className={`input-reset ${s.input}`}
+      type="email"
+      placeholder={placeholder}
+    />
+  );
 };
 
 export default InputMail;

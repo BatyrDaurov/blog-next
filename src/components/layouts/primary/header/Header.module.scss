@@ -51,6 +51,8 @@
 }
 .logo {
   display: flex;
+  text-decoration: none;
+  transition: 0.15s linear;
   &__sup {
     font-family: 'Plus Jakarta Sans';
     font-weight: 600;
@@ -67,5 +69,8 @@
     font-size: 18px;
     line-height: 23px;
     color: var(--primary-color);
+  }
+  &:active {
+    transform: translateY(4px);
   }
 }

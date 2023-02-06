@@ -1,0 +1,23 @@
+.button {
+  padding: 0 23px;
+  height: 67px;
+
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: #fffffe;
+
+  transition: 0.15s linear;
+  &:hover {
+    background-color: #472fbe;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
+}
