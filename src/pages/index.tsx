@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { Hero, PrimaryLayout } from '../components';
+import { Categories } from '../modules/categories';
 
 const Home: NextPage = () => {
   return (
@@ -7,6 +8,7 @@ const Home: NextPage = () => {
       <PrimaryLayout>
         <main>
           <Hero />
+          <Categories />
         </main>
       </PrimaryLayout>
     </>
