@@ -1,0 +1,12 @@
+.articles {
+  &__posts {
+    padding-top: 75px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+  &__more {
+    align-self: center;
+    width: 170px;
+  }
+}

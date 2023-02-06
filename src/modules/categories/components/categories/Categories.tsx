@@ -37,7 +37,7 @@ const Categories = () => {
         </div>
         <ul className={`${s.categories__cards} list-reset`}>
           {fake.map((item) => (
-            <li key={item.image}>
+            <li key={item.title}>
               <CategoryCard category={item} />
             </li>
           ))}

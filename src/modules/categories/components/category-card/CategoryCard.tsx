@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import s from './CategoryCard.module.scss';
 
 type Props = {
@@ -19,7 +20,11 @@ const CategoryCard = ({ category }: Props) => {
           alt="Tailwind Banner | Batyr.blog"
         />
       </div>
-      <h4 className={s.card__title}>{category.title}</h4>
+      <h4 className={s.card__title}>
+        <Link className="link-reset" href="/">
+          {category.title}
+        </Link>
+      </h4>
     </article>
   );
 };

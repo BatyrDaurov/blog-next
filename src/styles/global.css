@@ -44,3 +44,7 @@ body {
   border-radius: 0;
   background-color: #fff;
 }
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}
