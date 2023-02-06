@@ -1,4 +1,5 @@
 .hero {
+  position: relative;
   padding-bottom: 6px;
   height: calc(500px + 45vh);
   background-color: #eff0f3;
@@ -52,5 +53,25 @@
     input {
       flex: 1 1 auto;
     }
+  }
+}
+
+.scroll {
+  animation: scroll 1.5s ease infinite;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+}
+
+@keyframes scroll {
+  0% {
+    bottom: 50px;
+  }
+  50% {
+    bottom: 60px;
+  }
+  100% {
+    bottom: 50px;
   }
 }

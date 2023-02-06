@@ -31,6 +31,9 @@ const Hero = (props: Props) => {
           />
         </div>
       </div>
+      <button className={`btn-reset ${s.scroll}`}>
+        <img src="icons/arrow_down.svg" aria-hidden="true" />
+      </button>
     </section>
   );
 };
