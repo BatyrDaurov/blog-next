@@ -1,0 +1,107 @@
+$height: 435px;
+
+.footer {
+  min-height: $height;
+  background-color: #e4e5e9;
+  &__container {
+    height: $height;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__top {
+    display: flex;
+    gap: 160px;
+  }
+  &__bottom {
+    border-top: 1px solid #c0c0c0;
+    padding: 26px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__copyright,
+  &__secret {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: var(--text-color);
+  }
+  &__socials {
+    display: flex;
+    gap: 30px;
+  }
+  &__descr {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+
+    color: var(--text-color);
+  }
+}
+.grid {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  &__title {
+    margin: 0;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    text-transform: uppercase;
+
+    color: var(--text-color);
+  }
+  &__link {
+    transition: 0.15s linear;
+    &:hover {
+      text-decoration-line: underline;
+      color: #000;
+    }
+  }
+  &__links {
+    a {
+      display: block;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 23px;
+
+      color: var(--text-color);
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+.logo {
+  display: flex;
+  text-decoration: none;
+  transition: 0.15s linear;
+  margin-bottom: 20px;
+  &__sup {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 45px;
+
+    color: #001858;
+  }
+  &__sub {
+    align-self: flex-end;
+    padding-bottom: 4px;
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: var(--primary-color);
+  }
+  &:active {
+    transform: translateY(4px);
+  }
+}

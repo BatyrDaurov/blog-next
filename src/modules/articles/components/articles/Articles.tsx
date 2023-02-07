@@ -53,8 +53,8 @@ const posts = [
       },
       {
         img: '/post_img.jpg',
-        title: '7 project with javascript you must try for your portfolio',
-        readTime: 2,
+        title: 'make simple calculator with javascript',
+        readTime: 6,
         author: {
           img: '/author.jpg',
           name: 'Dasteen',
@@ -78,7 +78,7 @@ const posts = [
       },
       {
         img: '/post_img.jpg',
-        title: 'first month of leaning react jS',
+        title: 'Make tic tac toe games with react JS',
         readTime: 3,
         author: {
           img: '/author.jpg',
