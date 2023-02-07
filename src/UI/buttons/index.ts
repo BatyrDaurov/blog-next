@@ -1,3 +1,3 @@
-import PrimaryButton from './primary/PrimaryButton';
+import PrimaryButton from './button-primary/PrimaryButton';
 
 export { PrimaryButton };

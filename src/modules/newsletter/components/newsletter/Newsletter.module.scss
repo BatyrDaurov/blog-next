@@ -1,0 +1,39 @@
+$height: 450px;
+
+.newsletter {
+  min-height: $height;
+  background-color: #eff0f3;
+  &__container {
+    max-width: 690px;
+    height: $height;
+    padding: 0 40px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+    text-transform: capitalize;
+
+    color: var(--text-color);
+  }
+  &__descr {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+
+    color: #c0c0c0;
+  }
+  &__icon {
+    margin-bottom: 30px;
+  }
+}

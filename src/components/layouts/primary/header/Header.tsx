@@ -25,7 +25,13 @@ const Header = ({ links }: Props) => {
             </Link>
           ))}
           <button className={`btn-reset ${s.header__btn}`}>
-            <Image src="icons/coffee.svg" aria-hidden="true" alt="" />
+            <Image
+              src="icons/coffee.svg"
+              width={24}
+              height={24}
+              aria-hidden="true"
+              alt=""
+            />
             Buy Me a Coffee
           </button>
         </nav>
