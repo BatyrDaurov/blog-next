@@ -1,24 +1,32 @@
+$card-height: 280px;
+
 .card {
   cursor: pointer;
   width: 220px;
-  min-height: 280px;
-  padding: 30px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-height: $card-height;
 
   border-radius: 8px;
   background-color: #fff;
-  // box-shadow: 4px 6px 13px rgba(215, 215, 215, 0.25);
+  box-shadow: 4px 6px 13px rgba(215, 215, 215, 0.25);
   transition: 0.3s;
   &:hover {
     background-color: var(--primary-color);
+    transform: translateY(-3px);
     .card__title {
       color: #fff;
     }
   }
+  &__wrapper {
+    height: $card-height;
+    width: 100%;
+    padding: 30px;
+    padding-bottom: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   &__title {
+    margin: 0;
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
@@ -28,6 +36,7 @@
     color: var(--text-color);
   }
   &__picture {
+    margin-bottom: 30px;
     height: 60px;
     width: 60px;
   }
