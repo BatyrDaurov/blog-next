@@ -21,12 +21,7 @@ const Hero = () => {
           </form>
         </div>
         <div className={s.hero__banner}>
-          <Image
-            src="hero.svg"
-            width={370}
-            height={435}
-            alt="Hero Banner | Batyr.blog"
-          />
+          <Image src="hero.svg" fill={true} alt="Hero Banner | Batyr.blog" />
         </div>
       </div>
       <button className={`btn-reset ${s.scroll}`}>

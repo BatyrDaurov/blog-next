@@ -1,3 +1,5 @@
+@import './../../../../styles/mixins/breakpoint';
+
 $height: 450px;
 
 .newsletter {
@@ -13,6 +15,11 @@ $height: 450px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    @include small-tablet {
+      align-items: start;
+      height: auto;
+      padding: 40px;
+    }
   }
   &__title {
     margin: 0;
@@ -23,6 +30,10 @@ $height: 450px;
     text-transform: capitalize;
 
     color: var(--text-color);
+    @include small-tablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
   }
   &__descr {
     margin: 0;
@@ -32,8 +43,15 @@ $height: 450px;
     line-height: 25px;
 
     color: #c0c0c0;
+    @include small-tablet {
+      font-size: 18px;
+      line-height: 20px;
+    }
   }
   &__icon {
     margin-bottom: 30px;
+    @include small-tablet {
+      align-self: center;
+    }
   }
 }

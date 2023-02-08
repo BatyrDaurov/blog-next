@@ -6,16 +6,14 @@ import { Newsletter } from '../modules/newsletter';
 
 const Home: NextPage = () => {
   return (
-    <>
-      <PrimaryLayout>
-        <main>
-          <Hero />
-          <Categories />
-          <Articles />
-          <Newsletter />
-        </main>
-      </PrimaryLayout>
-    </>
+    <PrimaryLayout>
+      <main>
+        <Hero />
+        <Categories />
+        <Articles />
+        <Newsletter />
+      </main>
+    </PrimaryLayout>
   );
 };
 

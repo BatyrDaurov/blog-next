@@ -1,13 +1,18 @@
+@import './../../../../styles/mixins/breakpoint';
+
 .articles {
   &__head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 50px;
-  }
-  &__cards {
-    display: flex;
-    gap: 16px;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    row-gap: 0.85rem;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
   }
   &__see {
     font-weight: 700;
@@ -21,6 +26,9 @@
     background-repeat: no-repeat;
     background-position: 94% 69%;
     transition: 0.15s linear;
+    @include small-tablet {
+      font-size: 18px;
+    }
     &:hover {
       background-position-x: 97%;
       color: #000;
@@ -39,6 +47,14 @@
     text-transform: capitalize;
 
     color: var(--text-color);
+    @include small-tablet {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @include mobile {
+      font-size: 24px;
+      line-height: 30px;
+    }
     &::after {
       content: '';
       display: block;
@@ -51,6 +67,12 @@
       right: calc(-25px - 10px);
       top: 56%;
       transform: translateY(-50%);
+      @include mobile {
+        display: none;
+      }
     }
+  }
+  .swiperCard {
+    width: auto;
   }
 }

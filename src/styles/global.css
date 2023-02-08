@@ -22,6 +22,7 @@ body {
   max-width: 1280px;
   padding: 0 15px;
   margin: 0 auto;
+  width: 100%;
 }
 
 /* Reset's */

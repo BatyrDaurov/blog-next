@@ -1,3 +1,5 @@
+@import './../../../../styles/mixins/breakpoint';
+
 $height: 435px;
 
 .footer {
@@ -9,14 +11,26 @@ $height: 435px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include medium {
+      height: auto;
+    }
   }
   &__top {
     display: flex;
     gap: 160px;
+    @include medium {
+      gap: 100px;
+      margin-bottom: 4rem;
+    }
+    @include small-tablet {
+      gap: 4rem;
+      flex-direction: column;
+    }
   }
   &__bottom {
     border-top: 1px solid #c0c0c0;
     padding: 26px 0;
+    gap: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,7 +61,17 @@ $height: 435px;
 .grid {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 4rem;
   flex: 1 1 auto;
+
+  @include medium {
+    justify-content: start;
+  }
+  @include small-tablet {
+    justify-content: space-between;
+  }
   &__title {
     margin: 0;
     margin-bottom: 25px;

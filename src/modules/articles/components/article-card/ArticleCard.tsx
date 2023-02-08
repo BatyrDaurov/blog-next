@@ -27,14 +27,22 @@ const ArticleCard = ({ article }: Props) => {
       </div>
       <div className={s.article__footer}>
         <div className={`${s.author} ${s.article__author}`}>
-          <Image
-            src={article.author.img}
-            width={57}
-            height={57}
-            alt={`${article.author.name} | Batyr.blog`}
-          />
+          <Link href="" className="link-reset">
+            <Image
+              src={article.author.img}
+              width={57}
+              height={57}
+              alt={`${article.author.name} | Batyr.blog`}
+            />
+          </Link>
+
           <div className={s.author__info}>
-            <p className={s.author__name}>{article.author.name}</p>
+            <Link
+              href={`user/` + article.author.name.toLowerCase()}
+              className={`link-reset ${s.author__name}`}
+            >
+              {article.author.name}
+            </Link>
             <p className={s.author__date}>{article.author.date}</p>
           </div>
         </div>

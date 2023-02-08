@@ -1,7 +1,8 @@
+@import './../../../../styles/mixins/breakpoint';
 .article {
   cursor: pointer;
   width: 300px;
-  height: 425px;
+  min-height: 425px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -9,6 +10,12 @@
   background-color: #fff;
   border-radius: 12px;
   transition: 0.3s;
+
+  @include mobile {
+    padding: 0;
+    min-height: 370px;
+    width: 260px;
+  }
   &:hover {
     transform: translateY(-2px);
     box-shadow: 4px 6px 13px rgba(215, 215, 215, 0.25);
@@ -16,6 +23,9 @@
   &__footer {
     display: flex;
     justify-content: space-between;
+    @include mobile {
+      padding: 0 10px;
+    }
   }
   &__banner {
     margin-bottom: 25px;
@@ -29,6 +39,9 @@
     text-transform: capitalize;
 
     color: var(--text-color);
+    @include mobile {
+      padding: 0 10px;
+    }
   }
 }
 .author {

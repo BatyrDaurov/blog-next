@@ -1,20 +1,47 @@
+@import './../../styles/mixins/breakpoint';
+
+$height: 800px;
+
 .hero {
   position: relative;
   padding-bottom: 6px;
-  height: calc(500px + 45vh);
+  min-height: $height;
   background-color: #eff0f3;
   background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='%23D2D6DB'/%3E%3C/svg%3E");
 
+  @include medium {
+    min-height: 500px;
+  }
+  &__banner {
+    position: relative;
+    width: 385px;
+    height: 445px;
+    @include mobile {
+      height: 300px;
+      max-width: 350px;
+      width: 100%;
+    }
+  }
   &__info {
     max-width: 655px;
+    @include medium {
+      max-width: 550px;
+    }
   }
   &__container {
-    height: 100%;
+    height: 800px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    // flex-wrap: wrap;
+    @include medium {
+      height: auto;
+    }
+    @include tablet {
+      padding-top: 3rem;
+      padding-bottom: 1rem;
+      flex-direction: column-reverse;
+    }
   }
   &__title {
     margin: 0;
@@ -24,6 +51,14 @@
     line-height: 81px;
     text-transform: capitalize;
     color: var(--text-color);
+    @include medium {
+      font-size: 52px;
+      line-height: 68px;
+    }
+    @include mobile {
+      font-size: 42px;
+      line-height: 52px;
+    }
   }
   &__text {
     position: relative;
@@ -35,6 +70,14 @@
     font-size: 20px;
     line-height: 25px;
     color: #9a9494;
+    @include medium {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    @include mobile {
+      font-size: 16px;
+      line-height: 20px;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -49,29 +92,38 @@
   &__sending {
     max-width: 610px;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     input {
       flex: 1 1 auto;
     }
+    @include small-tablet {
+      gap: 10px;
+      button {
+        width: 100%;
+      }
+    }
   }
 }
-
 .scroll {
   animation: scroll 1.5s ease infinite;
   position: absolute;
   left: 50%;
-  bottom: 50px;
+  bottom: 10%;
   transform: translateX(-50%);
+  @include tablet {
+    display: none;
+  }
 }
 
 @keyframes scroll {
   0% {
-    bottom: 50px;
+    bottom: 4%;
   }
   50% {
-    bottom: 60px;
+    bottom: calc(4% + 10px);
   }
   100% {
-    bottom: 50px;
+    bottom: 4%;
   }
 }

@@ -1,3 +1,6 @@
+@import './../../../../styles/mixins/burger';
+@import './../../../../styles/mixins/breakpoint';
+
 .header {
   height: 85px;
   &__container {
@@ -10,6 +13,26 @@
     display: flex;
     align-items: center;
     gap: 50px;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 3rem;
+      position: fixed;
+      top: 0;
+      right: -150%;
+      z-index: 50;
+      height: 100vh;
+      width: 100vw;
+      padding: 5rem 2rem;
+      background-color: #fff;
+      transition: 0.3s;
+    }
+    &_active {
+      right: 0;
+      touch-action: none;
+    }
   }
   &__link {
     font-weight: 700;
@@ -19,6 +42,9 @@
     text-decoration: none;
     color: var(--text-color);
     transition: 0.15s linear;
+    @include tablet {
+      font-size: 28px;
+    }
     &:hover {
       color: var(--primary-color);
     }
@@ -40,6 +66,10 @@
     background-color: var(--primary-color);
     box-shadow: 0px 5px 9px 1px rgba(98, 70, 234, 0.25);
     transition: 0.2s linear;
+    @include tablet {
+      min-height: 65px;
+      font-size: 22px;
+    }
     &:hover {
       background-color: #5a45c2;
       box-shadow: none;
@@ -48,29 +78,37 @@
       transform: translateY(2px);
     }
   }
-}
-.logo {
-  display: flex;
-  text-decoration: none;
-  transition: 0.15s linear;
-  &__sup {
-    font-family: 'Plus Jakarta Sans';
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 45px;
+  .burger {
+    display: none;
+    z-index: 999;
+    @include burger;
+    @include tablet {
+      display: block;
+    }
+  }
+  .logo {
+    display: flex;
+    text-decoration: none;
+    transition: 0.15s linear;
+    &__sup {
+      font-family: 'Plus Jakarta Sans';
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 45px;
 
-    color: #001858;
-  }
-  &__sub {
-    align-self: flex-end;
-    padding-bottom: 4px;
-    font-family: 'Plus Jakarta Sans';
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 23px;
-    color: var(--primary-color);
-  }
-  &:active {
-    transform: translateY(4px);
+      color: #001858;
+    }
+    &__sub {
+      align-self: flex-end;
+      padding-bottom: 4px;
+      font-family: 'Plus Jakarta Sans';
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      color: var(--primary-color);
+    }
+    &:active {
+      transform: translateY(4px);
+    }
   }
 }

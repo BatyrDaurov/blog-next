@@ -1,8 +1,17 @@
+@import './../../../../styles/mixins/breakpoint';
+
 .newsletterForm {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   width: 100%;
   input {
     flex: 1 1 auto;
+  }
+  @include small-tablet {
+    gap: 10px;
+    button {
+      width: 100%;
+    }
   }
 }

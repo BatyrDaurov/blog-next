@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import s from './Header.module.scss';
 
 type LinkType = {
@@ -11,6 +12,7 @@ type Props = {
 };
 
 const Header = ({ links }: Props) => {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
     <header className={s.header}>
       <div className={`container ${s.header__container}`}>
@@ -18,7 +20,11 @@ const Header = ({ links }: Props) => {
           <span className={s.logo__sup}>Batyr</span>
           <span className={s.logo__sub}>.blog</span>
         </Link>
-        <nav className={s.header__nav}>
+        <nav
+          className={`${s.header__nav} ${
+            menuIsOpen && `${s.header__nav_active}`
+          }`}
+        >
           {links.map((el: LinkType) => (
             <Link className={s.header__link} key={el.url} href={el.url}>
               {el.label}
@@ -35,6 +41,14 @@ const Header = ({ links }: Props) => {
             Buy Me a Coffee
           </button>
         </nav>
+        <button
+          onClick={() => setMenuIsOpen(!menuIsOpen)}
+          className={`btn-reset ${s.burger} ${
+            menuIsOpen && `${s.burger__active}`
+          }`}
+        >
+          <span className={s.burger__line}></span>
+        </button>
       </div>
     </header>
   );

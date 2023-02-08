@@ -7,7 +7,8 @@
     gap: 80px;
   }
   &__more {
-    align-self: center;
-    width: 170px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import CategoryCard from '../category-card/CategoryCard';
 import s from './Categories.module.scss';
 
@@ -27,21 +29,33 @@ const fake = [
 
 const Categories = () => {
   return (
-    <section className={s.categories}>
+    <section className={s.categories} id="categories">
       <div className={`${s.categories__container} container`}>
         <div className={s.categories__head}>
           <h2 className={s.categories__title}>Browse the category</h2>
-          <Link href="/" className={s.categories__see}>
+          <Link href="/" className={`link-reset ${s.categories__see}`}>
             See all category
           </Link>
         </div>
-        <ul className={`${s.categories__cards} list-reset`}>
+        <Swiper
+          breakpoints={{
+            320: {
+              spaceBetween: 15,
+              slidesPerView: 'auto',
+            },
+            1280: {
+              spaceBetween: 37,
+              slidesPerView: 5,
+            },
+          }}
+          className={s.categories__cards}
+        >
           {fake.map((item) => (
-            <li key={item.title}>
+            <SwiperSlide className={s.swiperCard} key={item.title}>
               <CategoryCard category={item} />
-            </li>
+            </SwiperSlide>
           ))}
-        </ul>
+        </Swiper>
       </div>
     </section>
   );

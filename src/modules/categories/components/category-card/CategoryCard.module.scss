@@ -3,7 +3,7 @@ $card-height: 280px;
 .card {
   cursor: pointer;
   width: 220px;
-  min-height: $card-height;
+  height: $card-height;
 
   border-radius: 8px;
   background-color: #fff;
@@ -17,7 +17,7 @@ $card-height: 280px;
     }
   }
   &__wrapper {
-    height: $card-height;
+    height: 100%;
     width: 100%;
     padding: 30px;
     padding-bottom: 55px;

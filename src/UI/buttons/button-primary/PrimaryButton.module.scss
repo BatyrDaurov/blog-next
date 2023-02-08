@@ -1,3 +1,5 @@
+@import './../../../styles/mixins/breakpoint';
+
 .button {
   padding: 0 23px;
   height: 67px;
@@ -14,6 +16,10 @@
   color: #fffffe;
 
   transition: 0.15s linear;
+  @include small-tablet {
+    font-size: 18px;
+    line-height: 20px;
+  }
   &:hover {
     background-color: #472fbe;
   }
