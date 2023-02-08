@@ -30,7 +30,7 @@ const Footer = () => {
               <span className={s.logo__sup}>Batyr</span>
               <span className={s.logo__sub}>.blog</span>
             </Link>
-            <p className={s.footer__descr}>Digitaldastin by Dastin Darmawan</p>
+            <p className={s.footer__descr}>Made by Batyr Daurov</p>
             <ul className={`list-reset ${s.footer__socials}`}>
               {socials.map((social) => (
                 <li key={social.name}>
@@ -85,10 +85,10 @@ const Footer = () => {
               <h4 className={s.grid__title}>Get in touch</h4>
               <div className={s.grid__links}>
                 <Link className={`link-reset ${s.grid__link}`} href="/">
-                  +62-8XXX-XXX-XX
+                  +7 (900) 232-85-65
                 </Link>
                 <Link className={`link-reset ${s.grid__link}`} href="/">
-                  demo@gmail.com
+                  batyr.daurov@mail.ru
                 </Link>
               </div>
             </li>
@@ -112,7 +112,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className={s.footer__bottom}>
-          <span className={s.footer__copyright}>© 2022 Digitaldastin</span>
+          <span className={s.footer__copyright}>© 2022 Digitalbatyr</span>
           <p className={s.footer__secret}>Made With ❤️ Maykop, Adyghea</p>
         </div>
       </div>

@@ -9,13 +9,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     flex-wrap: wrap;
     column-gap: 3rem;
     row-gap: 0.85rem;
 
     @include mobile {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
   }
   &__title {
@@ -69,6 +69,9 @@
       background-position-x: 100%;
       color: #000;
     }
+  }
+  &__cards {
+    padding: 1rem 0;
   }
   .swiperCard {
     width: auto;

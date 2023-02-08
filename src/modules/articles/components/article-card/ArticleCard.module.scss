@@ -12,8 +12,9 @@
   transition: 0.3s;
 
   @include mobile {
-    padding: 0;
-    min-height: 370px;
+    padding: 10px 0;
+    min-height: 400px;
+    height: 400px;
     width: 260px;
   }
   &:hover {
@@ -29,6 +30,9 @@
   }
   &__banner {
     margin-bottom: 25px;
+    @include mobile {
+      margin-bottom: 10px;
+    }
   }
   &__title {
     margin: 0;
@@ -40,7 +44,7 @@
 
     color: var(--text-color);
     @include mobile {
-      padding: 0 10px;
+      padding: 10px;
     }
   }
 }

@@ -1,11 +1,14 @@
 @import './../../../../styles/mixins/breakpoint';
 
 .articles {
+  &__cards {
+    padding: 1rem 0;
+  }
   &__head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     flex-wrap: wrap;
     column-gap: 3rem;
     row-gap: 0.85rem;
