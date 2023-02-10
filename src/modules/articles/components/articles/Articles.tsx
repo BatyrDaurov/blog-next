@@ -6,6 +6,7 @@ export type Post = {
   img: string;
   title: string;
   readTime: number;
+  url: string;
   author: {
     img: string;
     name: string;
@@ -23,6 +24,7 @@ const posts = [
     posts: [
       {
         img: '/post_img.jpg',
+        url: 'articles/1',
         title: 'Array in javasript - Learn JS #3',
         readTime: 5,
         author: {
@@ -33,6 +35,7 @@ const posts = [
       },
       {
         img: '/post_img.jpg',
+        url: 'articles/1',
         title: 'Fundamental of javascript',
         readTime: 8,
         author: {
@@ -43,6 +46,7 @@ const posts = [
       },
       {
         img: '/post_img.jpg',
+        url: 'articles/1',
         title: '7 project with javascript you must try for your portfolio',
         readTime: 2,
         author: {
@@ -53,6 +57,7 @@ const posts = [
       },
       {
         img: '/post_img.jpg',
+        url: 'articles/1',
         title: 'make simple calculator with javascript',
         readTime: 6,
         author: {
@@ -68,6 +73,7 @@ const posts = [
     posts: [
       {
         img: '/post_img.jpg',
+        url: 'articles/1',
         title: 'first month of leaning react jS',
         readTime: 3,
         author: {
@@ -78,6 +84,7 @@ const posts = [
       },
       {
         img: '/post_img.jpg',
+        url: 'articles/1',
         title: 'Make tic tac toe games with react JS',
         readTime: 3,
         author: {
@@ -88,6 +95,7 @@ const posts = [
       },
       {
         img: '/post_img.jpg',
+        url: 'articles/1',
         title: 'build markdown editor with react JS',
         readTime: 5,
         author: {
@@ -98,6 +106,7 @@ const posts = [
       },
       {
         img: '/post_img.jpg',
+        url: 'articles/1',
         title: 'getting started with react JS',
         readTime: 8,
         author: {

@@ -12,8 +12,8 @@ const PrimaryLayout = ({ children }: Props) => {
       url: '/',
     },
     {
-      label: 'Category',
-      url: '/categories',
+      label: 'Articles',
+      url: '/articles',
     },
     {
       label: 'About Me',

@@ -84,10 +84,16 @@ const Footer = () => {
             <li className={s.grid__item}>
               <h4 className={s.grid__title}>Get in touch</h4>
               <div className={s.grid__links}>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
+                <Link
+                  className={`link-reset ${s.grid__link}`}
+                  href="tel:+7 (900) 232-85-65"
+                >
                   +7 (900) 232-85-65
                 </Link>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
+                <Link
+                  className={`link-reset ${s.grid__link}`}
+                  href="mailto:batyr.daurov@mail.ru"
+                >
                   batyr.daurov@mail.ru
                 </Link>
               </div>

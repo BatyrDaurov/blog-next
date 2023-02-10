@@ -32,7 +32,7 @@ const Header = ({ links }: Props) => {
           ))}
           <button className={`btn-reset ${s.header__btn}`}>
             <Image
-              src="icons/coffee.svg"
+              src="/icons/coffee.svg"
               width={24}
               height={24}
               aria-hidden="true"

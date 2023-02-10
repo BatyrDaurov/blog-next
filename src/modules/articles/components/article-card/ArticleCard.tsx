@@ -20,7 +20,7 @@ const ArticleCard = ({ article }: Props) => {
           />
         </div>
         <h4 className={s.article__title}>
-          <Link href="" className="link-reset">
+          <Link href={article.url} className="link-reset">
             {article.title}
           </Link>
         </h4>
