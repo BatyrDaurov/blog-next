@@ -39,6 +39,7 @@ const ArticleTags = (props: Props) => {
     <ul className={`list-reset ${s.tags}`}>
       {tags.map((tag) => (
         <li
+          key={tag.label}
           className={s.tag}
           style={{
             '--tag-bg': tag.styles.background.normal,

@@ -21,7 +21,7 @@ const ArticleReact = (props: Props) => {
     <aside className={s.interactions}>
       <ul className={`list-reset ${s.interactions__list}`}>
         {interactions.map((interaction) => (
-          <li className={s.interaction}>
+          <li key={interaction.count} className={s.interaction}>
             <button className="btn-reset">
               <div className={s.interaction__picture}>
                 <Image src={interaction.image} fill alt="Batyr.blog" />
