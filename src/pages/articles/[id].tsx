@@ -1,5 +1,5 @@
 import { PrimaryLayout } from '../../components';
-import { ArticleInfo } from '../../modules/article-info';
+import { ArticleInfo } from '../../modules/article-page';
 
 type Props = {};
 

@@ -1,0 +1,27 @@
+.tags {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 15px;
+}
+.tag {
+  cursor: pointer;
+  padding: 6px 9px;
+  background-color: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  border-radius: 7px;
+  transition: 0.1s linear;
+  &__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+    color: #000;
+    span {
+      color: var(--tag-prefix);
+    }
+  }
+  &:hover {
+    background-color: var(--tag-bg-hover);
+    border-color: var(--tag-border-hover);
+  }
+}

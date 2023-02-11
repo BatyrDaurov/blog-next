@@ -1,0 +1,28 @@
+.interactions {
+  padding: 2em;
+  padding-left: 0;
+  padding-bottom: 0;
+  &__list {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+}
+.interaction {
+  cursor: pointer;
+  display: block;
+  &__picture {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+  &__count {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+  }
+}

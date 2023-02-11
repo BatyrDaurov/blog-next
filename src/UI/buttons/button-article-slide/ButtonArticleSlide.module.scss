@@ -1,0 +1,23 @@
+$color-text: #929ee4;
+$color-bg: rgba(93, 113, 221, 0.05);
+$color-text-hover: #5d71dd;
+$color-bg-hover: rgba(93, 113, 221, 0.1);
+
+.button {
+  display: inline-block;
+  height: 43px;
+  padding: 10px 16px;
+
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 23px;
+
+  border-radius: 8px;
+  color: $color-text;
+  background-color: $color-bg;
+  transition: 0.1s linear;
+  &:hover {
+    color: $color-text-hover;
+    background-color: $color-bg-hover;
+  }
+}
