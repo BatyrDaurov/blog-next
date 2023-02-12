@@ -41,16 +41,16 @@
 }
 .page {
   display: flex;
+  flex-direction: row;
   gap: 30px;
   margin: 30px 0;
-  flex-direction: column;
-  @include mobile {
-    margin-top: 0;
-  }
-  @include interaction-height-breakpoint {
+  @include tablet {
     display: flex;
-    flex-direction: row;
     gap: 30px;
     margin: 30px 0;
+    flex-direction: column;
+  }
+  @include mobile {
+    margin-top: 0;
   }
 }

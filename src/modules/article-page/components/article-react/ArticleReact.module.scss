@@ -1,22 +1,22 @@
 @import './../../../../styles/mixins/breakpoint';
 .interactions {
-  max-width: 920px;
-  padding: 0.5rem 1rem;
-  @include interaction-height-breakpoint {
-    padding: 2em;
-    padding-left: 0;
-    padding-bottom: 0;
+  padding: 2em;
+  padding-left: 0;
+  padding-bottom: 0;
+  @include tablet {
+    max-width: 920px;
+    padding: 0.5rem 1rem;
   }
   &__list {
-    position: static;
+    position: fixed;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    @include interaction-height-breakpoint {
-      position: fixed;
+    flex-direction: column;
+    gap: 35px;
+    @include tablet {
+      position: static;
       display: flex;
-      flex-direction: column;
-      gap: 35px;
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 }

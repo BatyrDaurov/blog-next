@@ -34,14 +34,3 @@
     @content;
   }
 }
-
-@mixin interaction-width-breakpoint {
-  @media (min-width: (1024px)) {
-    @content;
-  }
-}
-@mixin interaction-height-breakpoint {
-  @media (min-height: (945px)) {
-    @content;
-  }
-}
