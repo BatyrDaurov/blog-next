@@ -1,14 +1,17 @@
-import ButtonArticleSlide from '../../../../UI/buttons/button-article-slide/ButtonArticleSlide';
+import { useRouter } from 'next/router';
+import { ButtonArticleSlide } from '../../../../UI/buttons';
+import { getArticle } from '../../helpers/getArticle';
 import s from './ArticleNavigation.module.scss';
 type Props = {};
 
 const ArticleNavigation = (props: Props) => {
+  const router = useRouter();
   return (
     <div className={s.navigation}>
-      <ButtonArticleSlide isNextSlide={false}>
+      <ButtonArticleSlide href={getArticle('prev', router)} isNextSlide={false}>
         Предыдущая статья
       </ButtonArticleSlide>
-      <ButtonArticleSlide isNextSlide={false}>
+      <ButtonArticleSlide href={getArticle('next', router)} isNextSlide={false}>
         Следующая статья
       </ButtonArticleSlide>
     </div>

@@ -8,7 +8,7 @@ import s from './ArticleInfo.module.scss';
 type Props = {};
 
 const ArticleInfo = (props: Props) => {
-  const text = `E-commerce store | Nike | Web-application
+  const text = `# E-commerce store | Nike | Web-application
   This is web application using NEXT.js 13 (app directory), the pet-project of Batyr Daurov.
   
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, sint nisi! 
@@ -96,9 +96,6 @@ const ArticleInfo = (props: Props) => {
           </div>
           <div className={s.article__info}>
             <ArticleTags />
-            <h1 className={s.article__title}>
-              Заголовок поста (не текст рыба).
-            </h1>
             <ReactMarkdown>{text}</ReactMarkdown>
           </div>
         </article>

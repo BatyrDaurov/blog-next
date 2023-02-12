@@ -1,12 +1,23 @@
+@import './../../../../styles/mixins/breakpoint';
 .interactions {
-  padding: 2em;
-  padding-left: 0;
-  padding-bottom: 0;
+  max-width: 920px;
+  padding: 0.5rem 1rem;
+  @include interaction-height-breakpoint {
+    padding: 2em;
+    padding-left: 0;
+    padding-bottom: 0;
+  }
   &__list {
-    position: fixed;
+    position: static;
     display: flex;
-    flex-direction: column;
-    gap: 35px;
+    flex-direction: row;
+    justify-content: space-between;
+    @include interaction-height-breakpoint {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
   }
 }
 .interaction {

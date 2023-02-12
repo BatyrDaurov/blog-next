@@ -35,6 +35,21 @@ const ArticleTags = (props: Props) => {
         },
       },
     },
+    {
+      url: '/articles/1',
+      label: 'docker',
+      styles: {
+        prefix: '#2562FF',
+        background: {
+          normal: '#F3F9FF',
+          hover: '#DCEEFF',
+        },
+        border: {
+          normal: '#DEE7FF',
+          hover: '#C2D3FF',
+        },
+      },
+    },
   ];
   return (
     <ul className={`list-reset ${s.tags}`}>

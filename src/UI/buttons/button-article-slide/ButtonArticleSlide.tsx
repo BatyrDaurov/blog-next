@@ -5,18 +5,19 @@ import s from './ButtonArticleSlide.module.scss';
 type Props = {
   children: React.ReactNode;
   isNextSlide: boolean;
+  href: string;
 };
 
-const ButtonArticleSlide = ({ children, isNextSlide }: Props) => {
+const ButtonArticleSlide = ({ children, isNextSlide, href }: Props) => {
   if (isNextSlide) {
     return (
-      <Link href="/" className={`link-reset ${s.button}`}>
+      <Link href={href} className={`link-reset ${s.button}`}>
         {children}
       </Link>
     );
   } else {
     return (
-      <Link href="/" className={`link-reset ${s.button}`}>
+      <Link href={href} className={`link-reset ${s.button}`}>
         {children}
       </Link>
     );
