@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { PrimaryButton } from '../../UI/buttons';
-import { InputMail } from '../../UI/inputs';
+import { PrimaryButton } from '../../../UI/buttons';
+import { InputMail } from '../../../UI/inputs';
 import s from './Hero.module.scss';
 
 const Hero = () => {
