@@ -6,23 +6,9 @@ type Props = {
 };
 
 const PrimaryLayout = ({ children }: Props) => {
-  const links = [
-    {
-      label: 'Home',
-      url: '/',
-    },
-    {
-      label: 'Articles',
-      url: '/articles',
-    },
-    {
-      label: 'About Me',
-      url: '/about',
-    },
-  ];
   return (
     <>
-      <Header links={links} />
+      <Header />
       {children}
       <Footer />
     </>

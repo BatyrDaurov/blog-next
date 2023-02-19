@@ -1,17 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { LINKS } from '../../../../constants/header-links/headerLinks';
+import type { HeaderLinkType } from '../../../../constants/header-links/types';
 import s from './Header.module.scss';
 
-type LinkType = {
-  label: string;
-  url: string;
-};
-type Props = {
-  links: LinkType[];
-};
-
-const Header = ({ links }: Props) => {
+const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
     <header className={s.header}>
@@ -25,7 +19,7 @@ const Header = ({ links }: Props) => {
             menuIsOpen && `${s.header__nav_active}`
           }`}
         >
-          {links.map((el: LinkType) => (
+          {LINKS.map((el: HeaderLinkType) => (
             <Link className={s.header__link} key={el.url} href={el.url}>
               {el.label}
             </Link>
