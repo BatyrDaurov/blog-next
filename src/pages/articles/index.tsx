@@ -1,6 +1,6 @@
 import { ArticleType } from '../../@types';
 import { PrimaryLayout } from '../../components';
-import ArticlesCatalog from '../../modules/articles-catalog/components/articles-catalog/ArticlesCatalog';
+import { ArticlesCatalog } from '../../modules/articles-catalog';
 
 type Props = {
   articles: ArticleType[];

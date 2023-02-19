@@ -1,3 +1,11 @@
 .filters {
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  &__options {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
+.filter {
+  width: 10rem;
 }
