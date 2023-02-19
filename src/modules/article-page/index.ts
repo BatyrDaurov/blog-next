@@ -1,3 +1,3 @@
-import ArticleInfo from './components/article-info/ArticleInfo';
+import ArticlePage from './components/article-page/ArticlePage';
 
-export { ArticleInfo };
+export { ArticlePage };

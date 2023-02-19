@@ -2,9 +2,8 @@ import { useRouter } from 'next/router';
 import { ButtonArticleSlide } from '../../../../UI/buttons';
 import { getArticle } from '../../helpers/getArticle';
 import s from './ArticleNavigation.module.scss';
-type Props = {};
 
-const ArticleNavigation = (props: Props) => {
+const ArticleNavigation = () => {
   const router = useRouter();
   return (
     <div className={s.navigation}>

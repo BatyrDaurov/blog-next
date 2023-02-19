@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
-import type { Post } from '../../../articles/components/articles/Articles';
+import { ArticleType } from '../../../../@types';
 import ArticleNavigation from '../article-navigation/ArticleNavigation';
 import ArticleReact from '../article-react/ArticleReact';
 import ArticleTags from '../article-tags/ArticleTags';
 import s from './ArticlePage.module.scss';
 
 type Props = {
-  article: Post;
+  article: ArticleType;
 };
 
 const ArticlePage = ({ article }: Props) => {
@@ -15,11 +15,18 @@ const ArticlePage = ({ article }: Props) => {
     <section className="container">
       <div className={s.page}>
         <article className={s.article}>
-          <div className={s.article__banner}>
-            <Image src="/banner_post.jpeg" objectFit="cover" fill alt="" />
-          </div>
+          {article.banner && (
+            <div className={s.article__banner}>
+              <Image
+                src={article.banner}
+                objectFit="cover"
+                fill
+                alt={article.title}
+              />
+            </div>
+          )}
           <div className={s.article__info}>
-            <ArticleTags />
+            <ArticleTags tags={article.tags} />
             <h1 className={s.article__title}>{article.title}</h1>
             <ReactMarkdown>{article.markdown}</ReactMarkdown>
           </div>

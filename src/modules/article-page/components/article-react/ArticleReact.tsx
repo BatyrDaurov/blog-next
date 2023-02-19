@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import s from './ArticleReact.module.scss';
-type Props = {};
 
-const ArticleReact = (props: Props) => {
+const ArticleReact = () => {
   const interactions = [
     {
       image: '/icons/interactions/like.svg',

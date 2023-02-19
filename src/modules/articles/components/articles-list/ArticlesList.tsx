@@ -1,20 +1,20 @@
 import Link from 'next/link';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { CategoriesType } from '../../../../@types/CategoriesType';
 import ArticleCard from '../article-card/ArticleCard';
-import { PostsList } from '../articles/Articles';
 import s from './ArticlesList.module.scss';
 
 type Props = {
-  articles: PostsList;
+  category: CategoriesType;
 };
 
-const ArticlesList = ({ articles }: Props) => {
+const ArticlesList = ({ category }: Props) => {
   return (
     <>
       <div className={s.articles}>
         <div className={s.articles__head}>
-          <h2 className={s.articles__title}>{articles.category}</h2>
+          <h2 className={s.articles__title}>{category.title}</h2>
           <Link href="/" className={`link-reset ${s.articles__see}`}>
             See all category
           </Link>
@@ -32,9 +32,9 @@ const ArticlesList = ({ articles }: Props) => {
           }}
           className={s.articles__cards}
         >
-          {articles.posts.map((el) => (
-            <SwiperSlide key={el.title} className={s.swiperCard}>
-              <ArticleCard article={el} />
+          {category.articles.map((articles) => (
+            <SwiperSlide key={articles.title} className={s.swiperCard}>
+              <ArticleCard article={articles} />
             </SwiperSlide>
           ))}
         </Swiper>
