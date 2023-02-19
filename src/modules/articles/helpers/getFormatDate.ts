@@ -15,6 +15,6 @@ const getFormatDate = (rawDate: Date) => {
   }
   //   Formatting Months
 
-  return `${date.getFullYear()} - ${formatedMonth} - ${formatedHours}:${formatedMinutes}`;
+  return `${formatedMonth} - ${formatedHours}:${formatedMinutes}`;
 };
 export default getFormatDate;

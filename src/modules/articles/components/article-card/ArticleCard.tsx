@@ -34,8 +34,9 @@ const ArticleCard = ({ article }: Props) => {
           {article.author.avatarURL && (
             <Image
               src={article.author.avatarURL}
-              width={57}
-              height={57}
+              width={55}
+              height={55}
+              className={s.author__banner}
               alt={`${article.author.name} | Batyr.blog`}
             />
           )}
@@ -44,7 +45,7 @@ const ArticleCard = ({ article }: Props) => {
               href={`user/` + article.author.name.toLowerCase()}
               className={`link-reset ${s.author__name}`}
             >
-              {article.author.name}
+              {article.author.name} {article.author.surname}
             </Link>
             <p className={s.author__date}>{date}</p>
           </div>

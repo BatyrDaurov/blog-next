@@ -30,6 +30,10 @@
   }
   &__banner {
     margin-bottom: 25px;
+    border-radius: 20px;
+    img {
+      border-radius: inherit;
+    }
     @include mobile {
       margin-bottom: 10px;
     }
@@ -73,5 +77,8 @@
     text-transform: capitalize;
 
     color: var(--text-color);
+  }
+  &__banner {
+    border-radius: 100%;
   }
 }

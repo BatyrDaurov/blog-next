@@ -1,28 +1,30 @@
 // @ts-nocheck
 import Link from 'next/link';
+import { TagsType } from '../../../../@types/TagsType';
 import s from './ArticleTags.module.scss';
+
 type Props = {
-  tags: string[];
+  tags: TagsType[];
 };
 
 const ArticleTags = ({ tags }: Props) => {
   return (
     <ul className={`list-reset ${s.tags}`}>
-      {tags.map((tag: string) => (
+      {tags.map((tag) => (
         <li
-          key={tag}
+          key={tag._id}
           className={s.tag}
           style={{
-            '--tag-bg': '#FFFCF6',
-            '--tag-border': '#FBF6EC',
-            '--tag-bg-hover': '#FFF6E3',
-            '--tag-border-hover': '#FFEAC2',
-            '--tag-prefix': '#D8A340',
+            '--tag-bg': tag.tagBgColor,
+            '--tag-border': tag.tagBorderColor,
+            '--tag-bg-hover': tag.tagBgHover,
+            '--tag-border-hover': tag.tagBorderHover,
+            '--tag-prefix': tag.tagPrefixColor,
           }}
         >
           <Link href="" className={`link-reset ${s.tag__text}`}>
             <span>#</span>
-            {tag}
+            {tag.tagName}
           </Link>
         </li>
       ))}
