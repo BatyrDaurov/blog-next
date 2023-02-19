@@ -1,6 +1,6 @@
 import { Hero, PrimaryLayout } from '../components';
-import { Articles } from '../modules/articles';
-import { Categories } from '../modules/categories';
+import { CategoriesLanding } from '../modules/categories-landing';
+import { Articles } from '../modules/categories-list';
 import { Newsletter } from '../modules/newsletter';
 
 type Props = {
@@ -12,7 +12,7 @@ const Home = ({ categories }: Props) => {
     <PrimaryLayout>
       <main>
         <Hero />
-        <Categories />
+        <CategoriesLanding />
         <Articles categories={categories} />
         <Newsletter />
       </main>

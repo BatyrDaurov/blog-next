@@ -1,27 +1,27 @@
-import { CategoriesType } from '../../@types';
+import { ArticleType } from '../../@types';
 import { PrimaryLayout } from '../../components';
-import { Articles } from '../../modules/articles';
+import ArticlesCatalog from '../../modules/articles-catalog/components/articles-catalog/ArticlesCatalog';
 
 type Props = {
-  categories: CategoriesType[];
+  articles: ArticleType[];
 };
 
-const ArticlesPage = ({ categories }: Props) => {
+const ArticlesPage = ({ articles }: Props) => {
   return (
     <PrimaryLayout>
       <main>
-        <Articles categories={categories} />
+        <ArticlesCatalog catalog={articles} />
       </main>
     </PrimaryLayout>
   );
 };
 
 export async function getServerSideProps() {
-  const categories = await fetch(`http://localhost:4444/categories`).then(
-    (res) => res.json()
+  const articles = await fetch(`http://localhost:4444/articles`).then((res) =>
+    res.json()
   );
   return {
-    props: { categories }, // will be passed to the page component as props
+    props: { articles }, // will be passed to the page component as props
   };
 }
 

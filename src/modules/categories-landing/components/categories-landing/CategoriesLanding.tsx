@@ -2,7 +2,7 @@ import Link from 'next/link';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import CategoryCard from '../category-card/CategoryCard';
-import s from './Categories.module.scss';
+import s from './CategoriesLanding.module.scss';
 
 const fake = [
   {
@@ -27,7 +27,7 @@ const fake = [
   },
 ];
 
-const Categories = () => {
+const CategoriesLanding = () => {
   return (
     <section className={s.categories} id="categories">
       <div className={`${s.categories__container} container`}>
@@ -61,4 +61,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default CategoriesLanding;

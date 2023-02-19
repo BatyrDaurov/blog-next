@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { CategoriesType } from '../../../../@types';
 import { PrimaryButton } from '../../../../UI/buttons';
 import ArticlesList from '../articles-list/ArticlesList';
@@ -8,6 +9,7 @@ type Props = {
 };
 
 const Articles = ({ categories }: Props) => {
+  const router = useRouter();
   return (
     <section className={s.articles}>
       <div className={`container ${s.articles__posts}`}>
@@ -15,7 +17,9 @@ const Articles = ({ categories }: Props) => {
           <ArticlesList key={category.title} category={category} />
         ))}
         <div className={s.articles__more}>
-          <PrimaryButton>More Article</PrimaryButton>
+          <PrimaryButton onClick={() => router.push(`/articles`)}>
+            More Article
+          </PrimaryButton>
         </div>
       </div>
     </section>
