@@ -32,9 +32,8 @@ const ArticlePage = ({ article }: Props) => {
           </div>
         </article>
         <ArticleReact
+          views={article.viewsCount}
           likes={article.likes}
-          shares={article.shares}
-          favourites={article.favourites}
           id={article._id}
         />
       </div>

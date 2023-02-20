@@ -1,16 +1,15 @@
-import axios from 'axios';
 import Image from 'next/image';
+import { setReaction } from '../../helpers/setReaction';
 import { InteractionType } from '../../types/InteractionType';
 import s from './ArticleReact.module.scss';
 
 type Props = {
   likes: number;
-  favourites: number;
-  shares: number;
+  views: number;
   id: string;
 };
 
-const ArticleReact = ({ likes, favourites, shares, id }: Props) => {
+const ArticleReact = ({ likes, views, id }: Props) => {
   const INTERACTIONS = [
     {
       name: 'Likes',
@@ -19,16 +18,10 @@ const ArticleReact = ({ likes, favourites, shares, id }: Props) => {
       count: likes,
     },
     {
-      name: 'Favourites',
-      request: 'favourite',
-      image: '/icons/interactions/favourite.svg',
-      count: favourites,
-    },
-    {
-      name: 'Shares',
-      request: 'share',
-      image: '/icons/interactions/share.svg',
-      count: shares,
+      name: 'Views',
+      request: 'views',
+      image: '/icons/interactions/eye.svg',
+      count: views,
     },
   ];
   return (
@@ -38,9 +31,11 @@ const ArticleReact = ({ likes, favourites, shares, id }: Props) => {
           <li key={interaction.request} className={s.interaction}>
             <button
               onClick={() =>
-                axios.post(`${id}`, {
-                  interaction: interaction.request,
-                })
+                setReaction(
+                  interaction.request,
+                  id,
+                  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VmODQzOGEzMWU0ZWFiZWZmZDY3YmQiLCJpYXQiOjE2NzY5MDM3NTIsImV4cCI6MTY3OTQ5NTc1Mn0.1TfuIJo6qHN_K4J-gbvuwlpW6sUxa-3frVKIYpEyzYc'
+                )
               }
               className="btn-reset"
             >
