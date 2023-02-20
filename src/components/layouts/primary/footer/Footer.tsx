@@ -1,26 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { CategoriesType } from '../../../../@types';
+import { SOCIALS } from '../../../../constants/header-links/footerLinks';
 import s from './Footer.module.scss';
 
-const socials = [
-  {
-    url: '/',
-    name: 'LinkedIn',
-    image: '/icons/socials/linkedin.svg',
-  },
-  {
-    url: '/',
-    name: 'Github',
-    image: '/icons/socials/linkedin.svg',
-  },
-  {
-    url: '/',
-    name: 'Telegram',
-    image: '/icons/socials/linkedin.svg',
-  },
-];
+type Props = {
+  categories?: CategoriesType[];
+};
 
-const Footer = () => {
+const Footer = ({ categories }: Props) => {
   return (
     <footer className={s.footer}>
       <div className={`container ${s.footer__container}`}>
@@ -32,7 +20,7 @@ const Footer = () => {
             </Link>
             <p className={s.footer__descr}>Made by Batyr Daurov</p>
             <ul className={`list-reset ${s.footer__socials}`}>
-              {socials.map((social) => (
+              {SOCIALS.map((social) => (
                 <li key={social.name}>
                   <Link href={social.url}>
                     <Image
@@ -50,33 +38,43 @@ const Footer = () => {
             <li className={s.grid__item}>
               <h4 className={s.grid__title}>Category</h4>
               <div className={s.grid__links}>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
-                  CSS
-                </Link>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
-                  Javascript
-                </Link>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
-                  Tailwind
-                </Link>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
-                  React JS
-                </Link>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
-                  More Category
+                {categories &&
+                  categories.map((category) => (
+                    <Link
+                      key={category.title}
+                      className={`link-reset ${s.grid__link}`}
+                      href={`categories/${category.title}`}
+                    >
+                      {category.title}
+                    </Link>
+                  ))}
+                <Link
+                  className={`link-reset ${s.grid__link}`}
+                  href={`articles`}
+                >
+                  More articles
                 </Link>
               </div>
             </li>
             <li className={s.grid__item}>
               <h4 className={s.grid__title}>About Me</h4>
               <div className={s.grid__links}>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
+                <Link
+                  className={`link-reset ${s.grid__link}`}
+                  href="https://github.com/BatyrDaurov"
+                >
                   About Me
                 </Link>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
+                <Link
+                  className={`link-reset ${s.grid__link}`}
+                  href="https://github.com/BatyrDaurov?tab=repositories"
+                >
                   Projects
                 </Link>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
+                <Link
+                  className={`link-reset ${s.grid__link}`}
+                  href="https://github.com/BatyrDaurov?tab=achievements"
+                >
                   Achievement
                 </Link>
               </div>
@@ -95,23 +93,6 @@ const Footer = () => {
                   href="mailto:batyr.daurov@mail.ru"
                 >
                   batyr.daurov@mail.ru
-                </Link>
-              </div>
-            </li>
-            <li className={s.grid__item}>
-              <h4 className={s.grid__title}>Follow Us</h4>
-              <div className={s.grid__links}>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
-                  Medium
-                </Link>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
-                  Instagram
-                </Link>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
-                  Twitter
-                </Link>
-                <Link className={`link-reset ${s.grid__link}`} href="/">
-                  Facebook
                 </Link>
               </div>
             </li>

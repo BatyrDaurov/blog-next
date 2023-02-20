@@ -9,7 +9,7 @@ type Props = {
 
 const Home = ({ categories }: Props) => {
   return (
-    <PrimaryLayout>
+    <PrimaryLayout categories={categories}>
       <main>
         <Hero />
         <CategoriesLanding />
