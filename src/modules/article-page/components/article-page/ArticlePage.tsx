@@ -31,7 +31,12 @@ const ArticlePage = ({ article }: Props) => {
             <ReactMarkdown>{article.markdown}</ReactMarkdown>
           </div>
         </article>
-        <ArticleReact />
+        <ArticleReact
+          likes={article.likes}
+          shares={article.shares}
+          favourites={article.favourites}
+          id={article._id}
+        />
       </div>
       <ArticleNavigation />
     </section>

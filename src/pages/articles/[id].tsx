@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { GetServerSideProps } from 'next';
 import { ArticleType } from '../../@types';
 import { PrimaryLayout } from '../../components';
@@ -19,11 +20,10 @@ const Article = ({ article }: Props) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id }: any = context.params;
-  const data = await fetch(`http://localhost:4444/articles/${id}`).then((res) =>
-    res.json()
-  );
+  const res = await axios.get(`http://localhost:4444/articles/${id}`);
+  const article = res.data;
   return {
-    props: { article: data },
+    props: { article },
   };
 };
 

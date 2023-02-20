@@ -12,7 +12,7 @@ const ArticleTags = ({ tags }: Props) => {
     <ul className={`list-reset ${s.tags}`}>
       {tags.map((tag) => (
         <li
-          key={tag._id}
+          key={tag.tagName}
           className={s.tag}
           style={{
             '--tag-bg': tag.tagBgColor,

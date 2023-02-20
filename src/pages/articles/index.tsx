@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { ArticleType } from '../../@types';
 import { PrimaryLayout } from '../../components';
 import { ArticlesCatalog } from '../../modules/articles-catalog';
@@ -17,9 +18,8 @@ const ArticlesPage = ({ articles }: Props) => {
 };
 
 export async function getServerSideProps() {
-  const articles = await fetch(`http://localhost:4444/articles`).then((res) =>
-    res.json()
-  );
+  const res = await axios.get(`http://localhost:4444/articles`);
+  const articles = res.data;
   return {
     props: { articles }, // will be passed to the page component as props
   };
