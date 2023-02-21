@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { CategoriesType } from '../../../../@types';
-import { SOCIALS } from '../../../../constants/header-links/footerLinks';
+import { SOCIALS } from '../../../../constants/links/footerLinks';
 import s from './Footer.module.scss';
 
 type Props = {

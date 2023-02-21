@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { LINKS } from '../../../../constants/header-links/headerLinks';
-import type { HeaderLinkType } from '../../../../constants/header-links/types';
+import { LINKS } from '../../../../constants/links/headerLinks';
+import type { HeaderLinkType } from '../../../../constants/links/types';
 import s from './Header.module.scss';
 
 const Header = () => {
