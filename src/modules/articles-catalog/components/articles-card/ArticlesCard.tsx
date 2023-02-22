@@ -45,7 +45,7 @@ const ArticlesCard = ({ article }: Props) => {
             <p className={s.author__date}>{date}</p>
           </div>
         </div>
-        <p className={s.author__time}>3 Min Read</p>
+        <p className={s.author__time}>{article.category}</p>
       </div>
     </article>
   );

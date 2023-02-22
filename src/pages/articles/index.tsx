@@ -1,28 +1,30 @@
-import axios from 'axios';
-import { ArticleType } from '../../@types';
+import { dehydrate } from 'react-query';
+import { QueryState } from 'react-query/types/core/query';
 import { PrimaryLayout } from '../../components';
-import { ArticlesCatalog } from '../../modules/articles-catalog';
+import { ArticlesCatalog, queryArticles } from '../../modules/articles-catalog';
 
 type Props = {
-  articles: ArticleType[];
+  articles: QueryState;
 };
+
+export async function getServerSideProps() {
+  const queryClient = await queryArticles();
+
+  return {
+    props: {
+      articles: dehydrate(queryClient).queries[0].state,
+    },
+  };
+}
 
 const ArticlesPage = ({ articles }: Props) => {
   return (
     <PrimaryLayout>
       <main>
-        <ArticlesCatalog catalog={articles} />
+        <ArticlesCatalog data={articles.data} queryState={articles} />
       </main>
     </PrimaryLayout>
   );
 };
-
-export async function getServerSideProps() {
-  const res = await axios.get(`http://localhost:4444/articles`);
-  const articles = res.data;
-  return {
-    props: { articles }, // will be passed to the page component as props
-  };
-}
 
 export default ArticlesPage;

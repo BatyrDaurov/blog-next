@@ -1,33 +1,15 @@
 import Link from 'next/link';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { CategoriesType } from '../../../../@types';
 import CategoryCard from '../category-card/CategoryCard';
 import s from './CategoriesLanding.module.scss';
 
-const fake = [
-  {
-    image: 'icons/tailwind.svg',
-    title: 'Tailwind',
-  },
-  {
-    image: 'icons/tailwind.svg',
-    title: 'CSS',
-  },
-  {
-    image: 'icons/tailwind.svg',
-    title: 'Javascript',
-  },
-  {
-    image: 'icons/tailwind.svg',
-    title: 'React JS',
-  },
-  {
-    image: 'icons/tailwind.svg',
-    title: 'Vue JS',
-  },
-];
+type Props = {
+  categories: CategoriesType[];
+};
 
-const CategoriesLanding = () => {
+const CategoriesLanding = ({ categories }: Props) => {
   return (
     <section className={s.categories} id="categories">
       <div className={`${s.categories__container} container`}>
@@ -50,7 +32,7 @@ const CategoriesLanding = () => {
           }}
           className={s.categories__cards}
         >
-          {fake.map((item) => (
+          {categories.map((item) => (
             <SwiperSlide className={s.swiperCard} key={item.title}>
               <CategoryCard category={item} />
             </SwiperSlide>

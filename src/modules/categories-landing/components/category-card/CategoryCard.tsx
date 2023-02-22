@@ -4,7 +4,7 @@ import s from './CategoryCard.module.scss';
 
 type Props = {
   category: {
-    image: string;
+    image?: string;
     title: string;
   };
 };
@@ -12,13 +12,16 @@ type Props = {
 const CategoryCard = ({ category }: Props) => {
   return (
     <article className={s.card}>
-      <Link className={`link-reset ${s.card__wrapper}`} href="/">
+      <Link
+        className={`link-reset ${s.card__wrapper}`}
+        href={`categories/${category.title}`}
+      >
         <div className={s.card__picture}>
           <Image
-            src={category.image}
+            src={'icons/tailwind.svg'}
             width={60}
             height={60}
-            alt="Tailwind Banner | Batyr.blog"
+            alt={`${category.title} - category | Batyr.blog`}
           />
         </div>
         <h4 className={s.card__title}>{category.title}</h4>

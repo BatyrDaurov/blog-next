@@ -1,7 +1,11 @@
 import Select from 'react-select';
 import s from './ArticlesFilters.module.scss';
 
-const ArticlesFilters = () => {
+type Props = {
+  results: number;
+};
+
+const ArticlesFilters = ({ results }: Props) => {
   const options = [
     { value: 'latest', label: 'Latest' },
     { value: 'views', label: 'Views' },
@@ -21,7 +25,7 @@ const ArticlesFilters = () => {
           <Select placeholder="Tags..." options={options2} />
         </div>
       </div>
-      <span>10 results</span>
+      <span>{results} results</span>
     </div>
   );
 };
