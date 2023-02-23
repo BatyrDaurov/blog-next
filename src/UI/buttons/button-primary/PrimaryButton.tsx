@@ -2,13 +2,18 @@ import React from 'react';
 import s from './PrimaryButton.module.scss';
 
 type Props = {
-  onClick?: () => void;
+  onClick?: (event?: any) => void; // eslint-disable-line no-unused-vars
   children: React.ReactNode;
+  onSubmit?: (event?: any) => Promise<void>; // eslint-disable-line no-unused-vars
 };
 
-const PrimaryButton = ({ children, onClick }: Props) => {
+const PrimaryButton = ({ children, onClick, onSubmit }: Props) => {
   return (
-    <button onClick={onClick} className={`btn-reset ${s.button}`}>
+    <button
+      onClick={onClick}
+      onSubmit={onSubmit}
+      className={`btn-reset ${s.button}`}
+    >
       {children}
     </button>
   );

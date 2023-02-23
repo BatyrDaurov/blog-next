@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { QueryClient } from 'react-query';
 import { fetchArticles } from './fetchArticles';
 

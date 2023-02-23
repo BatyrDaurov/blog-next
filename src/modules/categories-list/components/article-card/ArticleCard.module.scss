@@ -29,8 +29,11 @@
     }
   }
   &__banner {
+    position: relative;
     margin-bottom: 25px;
     border-radius: 20px;
+    width: 260px;
+    height: 198px;
     img {
       border-radius: inherit;
     }

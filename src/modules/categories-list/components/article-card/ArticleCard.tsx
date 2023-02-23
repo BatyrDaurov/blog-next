@@ -17,8 +17,8 @@ const ArticleCard = ({ article }: Props) => {
           <div className={s.article__banner}>
             <Image
               src={article.banner}
-              width={260}
-              height={198}
+              fill
+              objectFit="cover"
               alt={article.title}
             />
           </div>

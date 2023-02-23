@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { QueryClient } from 'react-query';
 import { fetchCategories } from './fetchCategories';
 

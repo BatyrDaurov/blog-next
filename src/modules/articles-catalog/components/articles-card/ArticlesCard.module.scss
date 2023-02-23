@@ -1,6 +1,7 @@
 @import './../../../../styles/mixins/breakpoint';
 .article {
   cursor: pointer;
+  position: relative;
   width: 300px;
   min-height: 425px;
   padding: 20px;
@@ -21,6 +22,10 @@
   &:hover {
     transform: translateY(-2px);
     box-shadow: 4px 6px 13px rgba(215, 215, 215, 0.25);
+    .article__delete {
+      opacity: 1;
+      visibility: visible;
+    }
   }
   &__footer {
     display: flex;
@@ -54,6 +59,25 @@
     color: var(--text-color);
     @include mobile {
       padding: 10px;
+    }
+  }
+  &__delete {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    z-index: 55;
+    padding: 0.5em 1em;
+    background-color: #e73a3a;
+    color: #fff;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.15s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(0.95);
     }
   }
 }

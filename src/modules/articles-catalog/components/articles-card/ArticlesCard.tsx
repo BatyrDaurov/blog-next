@@ -15,7 +15,12 @@ const ArticlesCard = ({ article }: Props) => {
       <div className={s.article__head}>
         {article.banner && (
           <div className={s.article__banner}>
-            <Image src={article.banner} fill alt={article.title} />
+            <Image
+              src={article.banner}
+              fill
+              alt={article.title}
+              objectFit="cover"
+            />
           </div>
         )}
         <h4 className={s.article__title}>
