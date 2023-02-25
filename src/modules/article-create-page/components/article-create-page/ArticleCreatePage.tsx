@@ -12,23 +12,27 @@ import ArticleMarkdownEditor from '../article-markdown-editor/ArticleMarkdownEdi
 import s from './ArticleCreatePage.module.scss';
 
 type Props = {
-  token: string
-}
+  token: string;
+};
 
 const ArticleCreatePage = ({ token }: Props) => {
   const router = useRouter();
-  const user = useCustomSelector(state => state.LoginReducer)
+  const user = useCustomSelector((state) => state.LoginReducer);
   const [article, setArticle] = React.useState<ArticleStateType>({
     banner: '',
     markdown: '',
     title: '',
     tags: '',
-    category: 'All'
+    category: 'All',
   });
 
-
-  if (user.user.role !== 'admin') {
-    return <ErrorMessage redirectURL='/' message="You don't have a permission to stay here 😠" />
+  if (!user.user.role.includes('admin')) {
+    return (
+      <ErrorMessage
+        redirectURL="/"
+        message="You don't have a permission to stay here 😠"
+      />
+    );
   }
 
   return (
@@ -55,7 +59,7 @@ const ArticleCreatePage = ({ token }: Props) => {
           </button>
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 
