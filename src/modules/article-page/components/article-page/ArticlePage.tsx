@@ -1,16 +1,20 @@
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import { ArticleType } from '../../../../@types';
+import { ErrorMessage } from '../../../../components';
 import ArticleNavigation from '../article-navigation/ArticleNavigation';
 import ArticleReact from '../article-react/ArticleReact';
 import ArticleTags from '../article-tags/ArticleTags';
 import s from './ArticlePage.module.scss';
 
 type Props = {
-  article: ArticleType;
+  article: ArticleType | null;
 };
 
 const ArticlePage = ({ article }: Props) => {
+  if (article === null) {
+    return <ErrorMessage redirectURL='/' message="I don't know this place ☹" />
+  }
   return (
     <section className="container">
       <div className={s.page}>

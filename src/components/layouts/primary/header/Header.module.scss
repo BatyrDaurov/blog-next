@@ -113,3 +113,10 @@
     }
   }
 }
+.avatar {
+  border-radius: 100%;
+  cursor: pointer;
+  img {
+    border-radius: inherit;
+  }
+}

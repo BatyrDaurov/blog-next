@@ -37,6 +37,8 @@ const ArticlesCard = ({ article }: Props) => {
               width={55}
               height={55}
               className={s.author__banner}
+              objectFit={'cover'}
+              loading="lazy"
               alt={`${article.author.name} | Batyr.blog`}
             />
           )}
@@ -50,7 +52,7 @@ const ArticlesCard = ({ article }: Props) => {
             <p className={s.author__date}>{date}</p>
           </div>
         </div>
-        <p className={s.author__time}>{article.category}</p>
+        <p className={s.author__category}>{article.category}</p>
       </div>
     </article>
   );

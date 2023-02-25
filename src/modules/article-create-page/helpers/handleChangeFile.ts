@@ -2,7 +2,7 @@ import axios from 'axios';
 import { setArticleStateType } from '../types';
 
 export const handleChangeFile =
-  (setArticle: setArticleStateType) => async (event: any) => {
+  (setArticle: setArticleStateType, token: string) => async (event: any) => {
     try {
       const serverLink = 'http://localhost:4444';
       const formData = new FormData();
@@ -11,7 +11,7 @@ export const handleChangeFile =
       const { data } = await axios.post(`${serverLink}/upload`, formData, {
         headers: {
           Authorization:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VmODQzOGEzMWU0ZWFiZWZmZDY3YmQiLCJpYXQiOjE2NzcxNTg1NTQsImV4cCI6MTY3OTc1MDU1NH0.FXy-IuFIkSfk7a8dg4dASFgyCTbxnW3DSRF4mZH_DzI',
+            token,
         },
       });
       setArticle((prev: any) => ({

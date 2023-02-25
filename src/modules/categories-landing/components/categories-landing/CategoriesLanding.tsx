@@ -15,8 +15,8 @@ const CategoriesLanding = ({ categories }: Props) => {
       <div className={`${s.categories__container} container`}>
         <div className={s.categories__head}>
           <h2 className={s.categories__title}>Browse the category</h2>
-          <Link href="/" className={`link-reset ${s.categories__see}`}>
-            See all category
+          <Link href="/articles" className={`link-reset ${s.categories__see}`}>
+            See all posts
           </Link>
         </div>
         <Swiper

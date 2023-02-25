@@ -2,6 +2,8 @@ import 'easymde/dist/easymde.min.css';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { UploadWindow } from '../../../../components';
+import ErrorMessage from '../../../../components/Global/error-message/ErrorMessage';
+import { useCustomSelector } from '../../../../hooks/store';
 import { PrimaryButton } from '../../../../UI/buttons';
 import { InputTitle } from '../../../../UI/inputs';
 import { handleChangeFile, OnChangeTitle, onSubmit } from '../../helpers';
@@ -9,21 +11,31 @@ import { ArticleStateType } from '../../types';
 import ArticleMarkdownEditor from '../article-markdown-editor/ArticleMarkdownEditor';
 import s from './ArticleCreatePage.module.scss';
 
-const ArticleCreatePage = () => {
+type Props = {
+  token: string
+}
+
+const ArticleCreatePage = ({ token }: Props) => {
   const router = useRouter();
+  const user = useCustomSelector(state => state.LoginReducer)
   const [article, setArticle] = React.useState<ArticleStateType>({
     banner: '',
     markdown: '',
     title: '',
     tags: '',
-    category: 'All',
+    category: 'All'
   });
+
+
+  if (user.user.role !== 'admin') {
+    return <ErrorMessage redirectURL='/' message="You don't have a permission to stay here 😠" />
+  }
 
   return (
     <div className="container">
       <div className={s.page}>
         <UploadWindow
-          handleChangeFile={handleChangeFile(setArticle)}
+          handleChangeFile={handleChangeFile(setArticle, token)}
           banner={article.banner}
         />
         <InputTitle
@@ -32,7 +44,7 @@ const ArticleCreatePage = () => {
         />
         <ArticleMarkdownEditor article={article} setArticle={setArticle} />
         <div className={s.buttons}>
-          <PrimaryButton onClick={onSubmit(article, false, router)}>
+          <PrimaryButton onClick={onSubmit(article, token, router)}>
             Create post
           </PrimaryButton>
           <button
@@ -43,7 +55,7 @@ const ArticleCreatePage = () => {
           </button>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

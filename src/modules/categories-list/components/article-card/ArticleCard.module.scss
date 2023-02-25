@@ -36,6 +36,7 @@
     height: 198px;
     img {
       border-radius: inherit;
+      object-fit: cover;
     }
     @include mobile {
       margin-bottom: 10px;
@@ -67,12 +68,12 @@
     line-height: 20px;
     color: var(--text-color);
   }
-  &__time {
+  &__category {
     align-self: end;
     padding-bottom: 8px;
   }
   &__date,
-  &__time {
+  &__category {
     margin: 0;
     font-weight: 400;
     font-size: 14px;
@@ -83,5 +84,7 @@
   }
   &__banner {
     border-radius: 100%;
+
+    object-fit: cover;
   }
 }

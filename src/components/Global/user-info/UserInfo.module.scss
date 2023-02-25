@@ -1,0 +1,44 @@
+.user {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 15px;
+  padding-bottom: 15px;
+  &:hover {
+    .popup {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  h2 {
+    font-size: 18px;
+    display: block;
+  }
+  &__img {
+    border-radius: 100%;
+  }
+}
+.popup {
+  position: absolute;
+  left: 50%;
+  bottom: -2.75rem;
+  z-index: 9999;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  background-color: rgb(181, 69, 69);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 4px 6px 13px rgb(215 215 215 / 25%);
+  border-radius: 8px;
+  width: 100px;
+  height: 50px;
+  &:hover {
+    background-color: rgb(133, 37, 37);
+  }
+}

@@ -1,19 +1,17 @@
-import axios from 'axios';
+import { NextRouter } from 'next/router';
+import api from '../../../../axios.config';
 import { ArticleStateType } from '../types';
 
 export const onSubmit =
-  (article: ArticleStateType, isEditing: boolean, router: any) => async () => {
+  (article: ArticleStateType, token: string, router: NextRouter) => async () => {
     try {
-      // const { data } = isEditing
-      //   ? await api.patch(`/articles/${router.query.id}`, fields)
-      //   : await api.post('/articles', fields);
-      const { data } = await axios.post(
-        'http://localhost:4444/articles',
+      const { data } = await api.post(
+        `${process.env.NEXT_PUBLIC_API_URL}articles`,
         article,
         {
           headers: {
             Authorization:
-              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VmODQzOGEzMWU0ZWFiZWZmZDY3YmQiLCJpYXQiOjE2NzcxNTk1OTYsImV4cCI6MTY3OTc1MTU5Nn0.i3LW0MkWslwhQxmYLpAPYn5XFPnYJm23usxuse7IjP8',
+              token,
           },
         }
       );

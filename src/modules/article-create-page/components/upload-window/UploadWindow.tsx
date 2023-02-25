@@ -9,7 +9,7 @@ type Props = {
 };
 
 const UploadWindow = ({ handleChangeFile, banner }: Props) => {
-  const inputFileRef: any = useRef(null);
+  const inputFileRef = useRef<HTMLInputElement>(null);
 
   return (
     <div className={s.window}>
@@ -23,7 +23,11 @@ const UploadWindow = ({ handleChangeFile, banner }: Props) => {
             className={s.window__input}
             ref={inputFileRef}
           />
-          <ButtonUploadImage onClick={() => inputFileRef.current.click()}>
+          <ButtonUploadImage onClick={() => {
+            if (inputFileRef.current) {
+              inputFileRef.current.click()
+            }
+          }}>
             Upload Image
           </ButtonUploadImage>
           <span className={s.window__message}>Перетащите сюда файл</span>

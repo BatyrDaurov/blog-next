@@ -16,10 +16,10 @@ const ArticlesList = ({ category }: Props) => {
         <div className={s.articles__head}>
           <h2 className={s.articles__title}>{category.title}</h2>
           <Link
-            href={`categories/${category.title}`}
+            href={`/articles`}
             className={`link-reset ${s.articles__see}`}
           >
-            See all category
+            See all posts
           </Link>
         </div>
         <Swiper

@@ -1,0 +1,38 @@
+.input {
+  width: 100%;
+  padding: 1em 2em;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #000;
+  background-color: rgb(234, 240, 247);
+  border: 1px solid #e0e0e0;
+  transition: 0.15s linear;
+  &::placeholder {
+    color: #4f555a;
+    font-size: 19px;
+  }
+  &:hover {
+    border: 1px solid #c5c5c5;
+    background-color: rgb(232, 240, 249);
+  }
+}
+.wrapper {
+  position: relative;
+  .icon {
+    position: absolute;
+    right: 0.75em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.15s linear;
+  }
+  &:hover {
+    .icon {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

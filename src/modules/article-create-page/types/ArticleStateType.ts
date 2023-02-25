@@ -3,5 +3,5 @@ export type ArticleStateType = {
   title: string;
   markdown: string;
   tags: string;
-  category: string;
+  category?: string;
 };

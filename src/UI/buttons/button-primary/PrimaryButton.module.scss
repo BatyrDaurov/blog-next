@@ -20,6 +20,16 @@
     font-size: 18px;
     line-height: 20px;
   }
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #717171;
+    &:hover {
+      background-color: #717171;
+    }
+    &:active {
+      transform: translateY(0);
+    }
+  }
   &:hover {
     background-color: #472fbe;
   }

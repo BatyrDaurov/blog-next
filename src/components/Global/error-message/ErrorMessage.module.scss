@@ -1,0 +1,14 @@
+.error {
+  min-height: 200px;
+  height: 80vh;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__title {
+    font-size: 32px;
+    line-height: 130%;
+    text-align: center;
+  }
+}

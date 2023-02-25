@@ -15,12 +15,7 @@ const ArticleCard = ({ article }: Props) => {
       <div className={s.article__head}>
         {article.banner && (
           <div className={s.article__banner}>
-            <Image
-              src={article.banner}
-              fill
-              objectFit="cover"
-              alt={article.title}
-            />
+            <Image src={article.banner} sizes="100%" fill alt={article.title} />
           </div>
         )}
         <h4 className={s.article__title}>
@@ -37,6 +32,7 @@ const ArticleCard = ({ article }: Props) => {
               width={55}
               height={55}
               className={s.author__banner}
+              loading="lazy"
               alt={`${article.author.name} | Batyr.blog`}
             />
           )}
@@ -50,7 +46,7 @@ const ArticleCard = ({ article }: Props) => {
             <p className={s.author__date}>{date}</p>
           </div>
         </div>
-        <p className={s.author__time}>3 Min Read</p>
+        <p className={s.author__category}>{article.category}</p>
       </div>
     </article>
   );
