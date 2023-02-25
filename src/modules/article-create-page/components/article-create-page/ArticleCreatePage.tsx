@@ -23,7 +23,7 @@ const ArticleCreatePage = ({ token }: Props) => {
     markdown: '',
     title: '',
     tags: '',
-    category: 'All',
+    category: '',
   });
 
   if (!user.user.role.includes('admin')) {
