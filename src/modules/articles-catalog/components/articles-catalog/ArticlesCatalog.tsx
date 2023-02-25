@@ -14,15 +14,24 @@ type Props = {
 };
 
 const ArticlesCatalog = ({ queryState, data }: Props) => {
-  const user = useCustomSelector(state => state.LoginReducer.user)
+  const user = useCustomSelector((state) => state.LoginReducer.user);
   if (queryState.error) {
-    return <ErrorMessage redirectURL='/' message='Ooooopss... what happened?' />
+    return (
+      <ErrorMessage redirectURL="/" message="Ooooopss... what happened?" />
+    );
   }
   return (
     <section className={s.catalog}>
       <div className="container">
         <ArticlesFilters results={data.length} />
-        {user.role === 'admin' && <Link href='/articles/create' className={`link-reset ${s.catalog__create}`}>Create article</Link>}
+        {user.role.includes('admin') && (
+          <Link
+            href="/articles/create"
+            className={`link-reset ${s.catalog__create}`}
+          >
+            Create article
+          </Link>
+        )}
         <div className={s.catalog__list}>
           <div className={s.catalog__cards}>
             {queryState.isFetching ? (
