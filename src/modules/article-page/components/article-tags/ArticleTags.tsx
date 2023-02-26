@@ -1,10 +1,10 @@
 // @ts-nocheck
 import Link from 'next/link';
-import { TagsType } from '../../../../@types/TagsType';
+import { TagType } from '../../../../@types/TagType';
 import s from './ArticleTags.module.scss';
 
 type Props = {
-  tags: TagsType[];
+  tags: TagType[];
 };
 
 const ArticleTags = ({ tags }: Props) => {
@@ -15,16 +15,17 @@ const ArticleTags = ({ tags }: Props) => {
           key={tag.tagName}
           className={s.tag}
           style={{
-            '--tag-bg': tag.tagBgColor,
-            '--tag-border': tag.tagBorderColor,
-            '--tag-bg-hover': tag.tagBgHover,
-            '--tag-border-hover': tag.tagBorderHover,
-            '--tag-prefix': tag.tagPrefixColor,
+            '--tag-bg': tag.background,
+            '--tag-border': tag.border,
+            '--tag-bg-hover': tag.hoverBackground,
+            '--tag-border-hover': tag.hoverBorder,
+            '--tag-prefix': tag.prefix,
+            '--tag-color': tag.prefix,
           }}
         >
           <Link href="" className={`link-reset ${s.tag__text}`}>
-            <span>#</span>
-            {tag.tagName}
+            <span className={s.tag__hash}>#</span>
+            {tag.name}
           </Link>
         </li>
       ))}

@@ -1,9 +1,10 @@
 export type TagsType = {
   _id: string;
-  tagName: string;
-  tagBgColor: string;
-  tagBgHover: string;
-  tagBorderColor: string;
-  tagBorderHover: string;
-  tagPrefixColor: string;
+  name: string;
+  color: string;
+  prefix: string;
+  border: string;
+  background: string;
+  hoverBorder: string;
+  hoverBackground: string;
 };
