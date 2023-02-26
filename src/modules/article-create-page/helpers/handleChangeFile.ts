@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setArticleStateType } from '../types';
+import { setArticleStateType } from '../types/setArticleStateType';
 
 export const handleChangeFile =
   (setArticle: setArticleStateType, token: string) => async (event: any) => {
