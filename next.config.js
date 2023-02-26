@@ -3,12 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [
-      'avatars.mds.yandex.net',
-      'wonder-day.com',
-      'localhost',
-      'localhost:4444',
-    ],
+    domains: ['blog-backend-j5r8.onrender.com'],
   },
 };
 
