@@ -13,7 +13,7 @@ type Props = {
 
 const ArticlePage = ({ article }: Props) => {
   if (article === null) {
-    return <ErrorMessage redirectURL='/' message="I don't know this place ☹" />
+    return <ErrorMessage redirectURL="/" message="I don't know this place ☹" />;
   }
   return (
     <section className="container">
@@ -32,7 +32,10 @@ const ArticlePage = ({ article }: Props) => {
           <div className={s.article__info}>
             <ArticleTags tags={article.tags} />
             <h1 className={s.article__title}>{article.title}</h1>
-            <ReactMarkdown>{article.markdown}</ReactMarkdown>
+            <p className={s.article__category}>{article.category}</p>
+            <div className={s.article__markdown}>
+              <ReactMarkdown>{article.markdown}</ReactMarkdown>
+            </div>
           </div>
         </article>
         <ArticleReact
