@@ -18,7 +18,7 @@ export const handleChangeFile =
       );
       setArticle((prev: any) => ({
         ...prev,
-        banner: `${process.env.NEXT_PUBLIC_API_URL}${data.url}`,
+        banner: `${process.env.NEXT_PUBLIC_API_URL}${data.url.substring(1)}`,
       }));
     } catch (error) {
       console.warn(error);
