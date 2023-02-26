@@ -1,0 +1,130 @@
+.tags {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+.tag {
+  --prefix-color: #d9d9d9;
+  --background-color: #eee;
+  --border-color: #cecece;
+  --tag-color: #000;
+  --background-hover-color: #cecece;
+  --border-hover-color: #989898;
+
+  cursor: pointer;
+  padding: 6px 9px;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  transition: 0.1s linear;
+  &__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+    color: var(--tag-color);
+  }
+  &__hash {
+    color: var(--prefix-color);
+  }
+  &:hover {
+    background-color: var(--background-hover-color);
+    border-color: var(--border-hover-color);
+  }
+}
+.createTag {
+  margin-top: 1rem;
+  &__wrapper {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  &__name {
+    position: relative;
+    margin: 0;
+    padding: 0.65em 1em 0.65em 2em;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #989898;
+  }
+  &__colors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  &__input {
+    position: relative;
+    span {
+      user-select: none;
+      pointer-events: none;
+      font-size: 18px;
+      position: absolute;
+      left: 0.75em;
+      top: 50%;
+      z-index: 9999;
+      transform: translateY(-50%);
+      color: #989898;
+    }
+  }
+  &__example {
+    display: flex;
+    align-items: center;
+    .tagExample {
+      --prefix-color: #d9d9d9;
+      --tag-color: #000;
+      --background-color: #eee;
+      --border-color: #cecece;
+      --background-hover-color: #cecece;
+      --border-hover-color: #989898;
+
+      cursor: pointer;
+      padding: 6px 9px;
+      background-color: var(--background-color);
+      border: 1px solid var(--border-color);
+      border-radius: 7px;
+      transition: 0.1s linear;
+      &__text {
+        margin: 0;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 17px;
+        color: var(--tag-color);
+      }
+      &__hash {
+        color: var(--prefix-color);
+      }
+      &:hover {
+        background-color: var(--background-hover-color);
+        border-color: var(--border-hover-color);
+      }
+    }
+  }
+}
+.button {
+  padding: 0.5em 1em;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background-color: var(--blue-color);
+  border-radius: 8px;
+  transition: 0.15s;
+  &.remove {
+    background-color: #a01b1b;
+    &:hover {
+      background-color: #712828;
+    }
+  }
+  &:hover {
+    background-color: #3c4faf;
+  }
+  &:active {
+    transform: translateY(3px);
+  }
+}
+.buttons {
+  display: flex;
+  gap: 1rem;
+}

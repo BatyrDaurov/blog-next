@@ -1,14 +1,19 @@
 import 'easymde/dist/easymde.min.css';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { UploadWindow } from '../../../../components';
-import ErrorMessage from '../../../../components/Global/error-message/ErrorMessage';
+import { ErrorMessage, UploadWindow } from '../../../../components';
 import { useCustomSelector } from '../../../../hooks/store';
 import { PrimaryButton } from '../../../../UI/buttons';
 import { InputTitle } from '../../../../UI/inputs';
-import { handleChangeFile, OnChangeTitle, onSubmit } from '../../helpers';
-import { ArticleStateType } from '../../types';
+import {
+  handleChangeFile,
+  OnChangeCategory,
+  OnChangeTitle,
+  onSubmit,
+} from '../../helpers';
+import { ArticleStateType } from '../../types/ArticleStateType';
 import ArticleMarkdownEditor from '../article-markdown-editor/ArticleMarkdownEditor';
+import InputTags from '../input-tags/InputTags';
 import s from './ArticleCreatePage.module.scss';
 
 type Props = {
@@ -22,7 +27,7 @@ const ArticleCreatePage = ({ token }: Props) => {
     banner: '',
     markdown: '',
     title: '',
-    tags: '',
+    tags: [],
     category: '',
   });
 
@@ -43,9 +48,15 @@ const ArticleCreatePage = ({ token }: Props) => {
           banner={article.banner}
         />
         <InputTitle
-          placeholder="Enter a title..."
+          placeholder="* Enter a title..."
           onChange={OnChangeTitle(setArticle)}
         />
+        <InputTitle
+          placeholder="* Enter a category..."
+          onChange={OnChangeCategory(setArticle)}
+        />
+        <InputTags setArticle={setArticle} article={article} />
+
         <ArticleMarkdownEditor article={article} setArticle={setArticle} />
         <div className={s.buttons}>
           <PrimaryButton onClick={onSubmit(article, token, router)}>

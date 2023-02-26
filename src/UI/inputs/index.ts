@@ -1,5 +1,6 @@
+import InputColor from './input-color/InputColor';
 import InputForm from './input-form/InputForm';
 import InputMail from './input-mail/InputMail';
 import InputTitle from './input-title/InputTitle';
 
-export { InputMail, InputTitle, InputForm };
+export { InputMail, InputTitle, InputForm, InputColor };

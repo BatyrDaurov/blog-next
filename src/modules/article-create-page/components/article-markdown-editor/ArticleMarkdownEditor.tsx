@@ -18,7 +18,7 @@ const ArticleMarkdownEditor = ({ article, setArticle }: Props) => {
       spellChecker: false,
       maxHeight: '400px',
       autofocus: false,
-      placeholder: 'Enter text...',
+      placeholder: '* Enter text...',
       status: false,
       autosave: {
         enabled: true,

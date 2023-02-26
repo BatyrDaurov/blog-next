@@ -5,7 +5,7 @@ type Props = {
   placeholder: string;
   icon?: string;
   onClickIcon?: () => void;
-  register: any;
+  register?: any;
 };
 
 const InputForm = (args: Props) => {

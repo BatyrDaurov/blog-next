@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  label {
+    margin-bottom: 1em;
+  }
+  input {
+    width: 50px;
+    height: 50px;
+    &::-webkit-color-swatch {
+      border-radius: 100%;
+    }
+  }
+}
