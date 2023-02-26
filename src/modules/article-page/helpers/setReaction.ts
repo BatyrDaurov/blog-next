@@ -7,7 +7,7 @@ export const setReaction = async (
 ) => {
   if (interaction !== 'views') {
     await axios.post(
-      `http://localhost:4444/articles/${id}`,
+      `${process.env.NEXT_PUBLIC_API_URL}articles/${id}`,
       {
         interaction: interaction,
       },
