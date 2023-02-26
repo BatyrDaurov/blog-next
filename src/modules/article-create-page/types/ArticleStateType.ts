@@ -1,9 +1,9 @@
-import { TagType } from '../../../@types/TagType';
+import { TagsType } from '../../../@types/TagsType';
 
 export type ArticleStateType = {
   banner: string;
   title: string;
   markdown: string;
-  tags?: TagType[];
+  tags?: TagsType[];
   category?: string;
 };

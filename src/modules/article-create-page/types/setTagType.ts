@@ -1,4 +1,4 @@
 import { Dispatch, SetStateAction } from 'react';
-import { TagType } from '../../../@types/TagType';
+import { TagsType } from '../../../@types/TagsType';
 
-export type setTagType = Dispatch<SetStateAction<TagType>>;
+export type setTagType = Dispatch<SetStateAction<TagsType>>;

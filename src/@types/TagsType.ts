@@ -1,5 +1,5 @@
 export type TagsType = {
-  _id: string;
+  _id?: string;
   name: string;
   color: string;
   prefix: string;

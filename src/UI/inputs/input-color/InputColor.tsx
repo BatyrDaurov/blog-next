@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction } from 'react';
-import { TagType } from '../../../@types/TagType';
+import { TagsType } from '../../../@types/TagsType';
 import s from './InputColor.module.scss';
 
 type Props = {
-  setTag: Dispatch<SetStateAction<TagType>>;
-  tag: TagType;
+  setTag: Dispatch<SetStateAction<TagsType>>;
+  tag: TagsType;
   label: string;
   value: string;
 };

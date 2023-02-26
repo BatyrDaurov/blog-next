@@ -1,4 +1,3 @@
-
 import { dehydrate } from 'react-query';
 import { connect } from 'react-redux';
 import { CategoriesType } from '../@types';
@@ -14,18 +13,23 @@ type Props = {
   categories: CategoriesType[];
 };
 
-export const getServerSideProps = wrapper.getServerSideProps(store => async (ctx) => {
-  await checkAuth(ctx, store, setUserData)
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) => async (ctx) => {
+    await checkAuth(ctx, store, setUserData);
 
-  const queryClient = await queryCategories();
-  return {
-    props: { categories: dehydrate(queryClient).queries[0].state.data }, // will be passed to the page component as props
-  };
-});
+    const queryClient = await queryCategories();
+    return {
+      props: { categories: dehydrate(queryClient).queries[0].state.data }, // will be passed to the page component as props
+    };
+  }
+);
 
 const Home = ({ categories }: Props) => {
   return (
-    <PrimaryLayout categories={categories}>
+    <PrimaryLayout
+      title="Batyr.blog | Personal home page"
+      categories={categories}
+    >
       <main>
         <Hero />
         <CategoriesLanding categories={categories} />

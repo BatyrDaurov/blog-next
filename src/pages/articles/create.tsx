@@ -22,7 +22,7 @@ export const getServerSideProps: GetServerSideProps =
 
 const CreateArticlePage = ({ token }: Props) => {
   return (
-    <PrimaryLayout>
+    <PrimaryLayout title="Create Article | Batyr.blog">
       <main>
         <ArticleCreatePage token={token} />
       </main>

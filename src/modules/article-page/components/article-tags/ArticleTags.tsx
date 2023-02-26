@@ -1,10 +1,10 @@
 // @ts-nocheck
 import Link from 'next/link';
-import { TagType } from '../../../../@types/TagType';
+import { TagsType } from '../../../../@types/TagsType';
 import s from './ArticleTags.module.scss';
 
 type Props = {
-  tags: TagType[];
+  tags: TagsType[];
 };
 
 const ArticleTags = ({ tags }: Props) => {

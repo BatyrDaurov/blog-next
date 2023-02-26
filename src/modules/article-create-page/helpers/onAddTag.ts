@@ -1,4 +1,4 @@
-import { TagType } from '../../../@types/TagType';
+import { TagsType } from '../../../@types/TagsType';
 import { setArticleStateType } from '../types/setArticleStateType';
 import { setIsOpenStateType } from '../types/setIsOpenStateType';
 import { setTagType } from '../types/setTagType';
@@ -8,7 +8,7 @@ export const onAddTag =
     setArticle: setArticleStateType,
     setIsOpen: setIsOpenStateType,
     setTag: setTagType,
-    tag: TagType
+    tag: TagsType
   ) =>
   () => {
     if (tag.name !== '') {

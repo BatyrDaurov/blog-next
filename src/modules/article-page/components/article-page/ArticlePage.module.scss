@@ -37,6 +37,11 @@
     line-height: 50px;
 
     color: #000000;
+    @include mobile {
+      font-size: 32px;
+      line-height: 42px;
+      margin-bottom: 10px;
+    }
   }
   &__category {
     margin: 0;
