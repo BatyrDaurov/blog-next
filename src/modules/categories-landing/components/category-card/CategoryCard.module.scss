@@ -36,8 +36,12 @@ $card-height: 280px;
     color: var(--text-color);
   }
   &__picture {
+    border-radius: 8px;
     margin-bottom: 30px;
     height: 60px;
     width: 60px;
+    img {
+      border-radius: inherit;
+    }
   }
 }

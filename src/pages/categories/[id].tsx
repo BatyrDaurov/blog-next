@@ -1,43 +1,41 @@
 import { GetServerSideProps } from 'next';
-import { parseCookies } from 'nookies';
 import { dehydrate } from 'react-query';
-import { ArticleType } from '../../@types';
+import { CategoriesType } from '../../@types';
 import { PrimaryLayout } from '../../components';
-import { ArticlePage, queryArticle } from '../../modules/article-page';
 import { setUserData } from '../../modules/authorization-page/store/slice';
+import { CategoryPage, queryCategory } from '../../modules/category-page';
 import { wrapper } from '../../store';
 import checkAuth from '../../utils/checkAuth';
 
 type Props = {
-  article: ArticleType | null;
-  token: any;
+  category: CategoriesType;
 };
 
 export const getServerSideProps: GetServerSideProps =
   wrapper.getServerSideProps((store) => async (ctx) => {
     try {
-      const token = parseCookies(ctx).authToken;
       await checkAuth(ctx, store, setUserData);
       const { id }: any = ctx.params;
-      const queryClient = await queryArticle(id);
+      const queryClient = await queryCategory(id);
+
       return {
-        props: { token, article: dehydrate(queryClient).queries[0].state.data },
+        props: { category: dehydrate(queryClient).queries[0].state.data },
       };
     } catch (error) {
       return {
-        props: { token: '', article: null },
+        props: { category: null },
       };
     }
   });
 
-const Article = ({ article, token }: Props) => {
+const Category = ({ category }: Props) => {
   return (
-    <PrimaryLayout title={`${article?.title} | Batyr.blog`}>
+    <PrimaryLayout title={`${category.title} category | Batyr.blog`}>
       <main>
-        <ArticlePage article={article} token={token} />
+        <CategoryPage category={category} />
       </main>
     </PrimaryLayout>
   );
 };
 
-export default Article;
+export default Category;

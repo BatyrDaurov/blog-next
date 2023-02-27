@@ -3,13 +3,15 @@ export type UserActionType = {
   user: UserType;
 };
 export type UserType = {
-  _id: '';
-  name: '';
-  surname: '';
-  email: '';
-  passwordHash: '';
-  avatarURL: '';
-  role: '';
-  createdAt: '';
-  updatedAt: '';
+  _id: string;
+  name: string;
+  surname: string;
+  email: string;
+  passwordHash: string;
+  avatarURL: string;
+  role: 'watcher' | 'admin' | '';
+  personalArticles: any[];
+  likedArticles: any[];
+  createdAt: string;
+  updatedAt: string;
 };

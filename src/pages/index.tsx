@@ -2,12 +2,12 @@ import { dehydrate } from 'react-query';
 import { connect } from 'react-redux';
 import { CategoriesType } from '../@types';
 import { Hero, PrimaryLayout } from '../components';
-import checkAuth from '../middlewares/checkAuth';
 import { setUserData } from '../modules/authorization-page/store/slice';
 import { CategoriesLanding } from '../modules/categories-landing';
 import { Articles, queryCategories } from '../modules/categories-list';
 import { Newsletter } from '../modules/newsletter';
 import { AppState, wrapper } from '../store';
+import checkAuth from '../utils/checkAuth';
 
 type Props = {
   categories: CategoriesType[];

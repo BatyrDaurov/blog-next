@@ -16,15 +16,15 @@ const ArticlesList = ({ category }: Props) => {
         <div className={s.articles__head}>
           <h2 className={s.articles__title}>{category.title}</h2>
           <Link
-            href={`/articles`}
+            href={`/categories/${category.title}`}
             className={`link-reset ${s.articles__see}`}
           >
-            See all posts
+            See all category
           </Link>
         </div>
         <Swiper
           breakpoints={{
-            320: {
+            220: {
               spaceBetween: 10,
               slidesPerView: 'auto',
             },

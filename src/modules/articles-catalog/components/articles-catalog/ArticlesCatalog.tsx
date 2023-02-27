@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import { QueryState } from 'react-query/types/core/query';
 import { ArticleType } from '../../../../@types';
-import { ErrorMessage } from '../../../../components';
+import { ArticlesCard, ErrorMessage } from '../../../../components';
 import { useCustomSelector } from '../../../../hooks/store';
 import { PrimaryButton } from '../../../../UI/buttons';
-import ArticlesCard from '../articles-card/ArticlesCard';
 import ArticlesFilters from '../articles-filters/ArticlesFilters';
 import s from './ArticlesCatalog.module.scss';
 

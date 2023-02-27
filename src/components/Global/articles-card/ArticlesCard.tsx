@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArticleType } from '../../../../@types';
-import getFormatDate from '../../../categories-list/helpers/getFormatDate';
+import { ArticleType } from '../../../@types';
+import getFormatDate from '../../../utils/getFormatDate';
 import s from './ArticlesCard.module.scss';
 
 type Props = {
@@ -24,7 +24,7 @@ const ArticlesCard = ({ article }: Props) => {
           </div>
         )}
         <h4 className={s.article__title}>
-          <Link href={`articles/${article._id}`} className="link-reset">
+          <Link href={`/articles/${article._id}`} className="link-reset">
             {article.title}
           </Link>
         </h4>

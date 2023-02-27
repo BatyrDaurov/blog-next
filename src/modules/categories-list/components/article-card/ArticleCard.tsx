@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArticleType } from '../../../../@types';
-import getFormatDate from '../../helpers/getFormatDate';
+import getFormatDate from '../../../../utils/getFormatDate';
 import s from './ArticleCard.module.scss';
 
 type Props = {

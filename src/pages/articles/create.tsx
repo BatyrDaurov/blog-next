@@ -1,10 +1,10 @@
 import { GetServerSideProps } from 'next';
 import { parseCookies } from 'nookies';
 import { PrimaryLayout } from '../../components';
-import checkAuth from '../../middlewares/checkAuth';
 import { ArticleCreatePage } from '../../modules/article-create-page';
 import { setUserData } from '../../modules/authorization-page/store/slice';
 import { wrapper } from '../../store';
+import checkAuth from '../../utils/checkAuth';
 
 type Props = {
   token: string;

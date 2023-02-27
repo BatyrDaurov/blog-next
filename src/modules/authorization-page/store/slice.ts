@@ -12,12 +12,13 @@ const initialState: UserActionType = {
     email: '',
     passwordHash: '',
     avatarURL: '',
+    personalArticles: [],
+    likedArticles: [],
     role: '',
     createdAt: '',
     updatedAt: '',
   },
 };
-
 
 const auth = createSlice({
   name: 'login',
@@ -25,28 +26,33 @@ const auth = createSlice({
   reducers: {
     setUserData: (state: UserActionType, action: PayloadAction<UserType>) =>
       (state = { status: 'activated', user: action.payload }),
-    removeUserData: (state: UserActionType) => (state = { //eslint-disable-line no-unused-vars
-      status: 'deactivated', user: {
-        _id: '',
-        name: '',
-        surname: '',
-        email: '',
-        passwordHash: '',
-        avatarURL: '',
-        role: '',
-        createdAt: '',
-        updatedAt: '',
-      },
-    }),
+    removeUserData: (state: UserActionType) =>
+      (state = {
+        //eslint-disable-line no-unused-vars
+        status: 'deactivated',
+        user: {
+          _id: '',
+          name: '',
+          surname: '',
+          email: '',
+          passwordHash: '',
+          avatarURL: '',
+          personalArticles: [],
+          likedArticles: [],
+          role: '',
+          createdAt: '',
+          updatedAt: '',
+        },
+      }),
   },
   extraReducers: {
     [HYDRATE]: (state, action) => {
       return {
         ...state,
         ...action.payload.LoginReducer,
-      }
-    }
-  }
+      };
+    },
+  },
 });
 
 export const LoginReducer = auth.reducer;

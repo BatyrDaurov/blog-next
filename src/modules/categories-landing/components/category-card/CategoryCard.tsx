@@ -14,11 +14,11 @@ const CategoryCard = ({ category }: Props) => {
     <article className={s.card}>
       <Link
         className={`link-reset ${s.card__wrapper}`}
-        href={`categories/${category.title}`}
+        href={`/categories/${category.title}`}
       >
         <div className={s.card__picture}>
           <Image
-            src={'icons/tailwind.svg'}
+            src={'icons/desktop.svg'}
             width={60}
             height={60}
             alt={`${category.title} - category | Batyr.blog`}

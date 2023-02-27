@@ -1,27 +1,28 @@
 import Image from 'next/image';
-import { setReaction } from '../../helpers/setReaction';
+import { ArticleType } from '../../../../@types';
 import { InteractionType } from '../../types/InteractionType';
 import s from './ArticleReact.module.scss';
 
 type Props = {
-  likes: number;
-  views: number;
-  id: string;
+  article: ArticleType;
+  token: string;
 };
 
-const ArticleReact = ({ likes, views, id }: Props) => {
+const ArticleReact = ({ article, token }: Props) => {
+  // const user = useCustomSelector((state) => state.LoginReducer.user);
+  // const isLiked = getIsLiked(user, article._id);
   const INTERACTIONS = [
-    {
-      name: 'Likes',
-      request: 'like',
-      image: '/icons/interactions/like.svg',
-      count: likes,
-    },
+    // {
+    //   name: 'Likes',
+    //   request: 'like',
+    //   image: '/icons/interactions/like.svg',
+    //   count: article.likes,
+    // },
     {
       name: 'Views',
       request: 'views',
       image: '/icons/interactions/eye.svg',
-      count: views,
+      count: article.viewsCount,
     },
   ];
   return (
@@ -30,13 +31,11 @@ const ArticleReact = ({ likes, views, id }: Props) => {
         {INTERACTIONS.map((interaction: InteractionType) => (
           <li key={interaction.request} className={s.interaction}>
             <button
-              onClick={() =>
-                setReaction(
-                  interaction.request,
-                  id,
-                  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2VmODQzOGEzMWU0ZWFiZWZmZDY3YmQiLCJpYXQiOjE2NzY5MDM3NTIsImV4cCI6MTY3OTQ5NTc1Mn0.1TfuIJo6qHN_K4J-gbvuwlpW6sUxa-3frVKIYpEyzYc'
-                )
-              }
+              // onClick={() => {
+              //   if (isLiked) {
+              //     setReaction(interaction.request, article._id, token);
+              //   }
+              // }}
               className="btn-reset"
             >
               <div className={s.interaction__picture}>
