@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 
-import { UserActionType, UserType } from '../../../@types/UserType';
+import { UserActionType, UserType } from '../../../../@types/UserType';
 
 const initialState: UserActionType = {
   status: 'deactivated',
