@@ -1,5 +1,5 @@
 import { PrimaryLayout } from '../../components';
-import { AuthorizationPage } from '../../modules/authorization-page';
+import { AuthorizationPage } from '../../modules/pages/authorization-page';
 
 const AuthPage = () => {
   return (

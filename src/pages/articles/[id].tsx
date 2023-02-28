@@ -3,8 +3,8 @@ import { parseCookies } from 'nookies';
 import { dehydrate } from 'react-query';
 import { ArticleType } from '../../@types';
 import { PrimaryLayout } from '../../components';
-import { ArticlePage, queryArticle } from '../../modules/article-page';
-import { setUserData } from '../../modules/authorization-page/store/slice';
+import { ArticlePage, queryArticle } from '../../modules/pages/article-page';
+import { setUserData } from '../../modules/pages/authorization-page/store/slice';
 import { wrapper } from '../../store';
 import checkAuth from '../../utils/checkAuth';
 

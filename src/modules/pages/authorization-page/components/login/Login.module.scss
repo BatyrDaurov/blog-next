@@ -1,0 +1,41 @@
+@import './../../../../../styles/mixins/breakpoint';
+.auth {
+  width: 320px;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  & > button {
+    margin-top: 2rem;
+  }
+  @include small-tablet {
+    width: 100%;
+  }
+  &__submit {
+    padding: 1em;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 10px;
+    background-color: var(--blue-color);
+    box-shadow: 0px 5px 15px rgba(68, 97, 242, 0.5);
+    transition: 0.15s linear;
+    &:hover {
+      background-color: #3853dc;
+      box-shadow: none;
+    }
+    &:active {
+      transform: translateY(4px);
+    }
+    &:disabled {
+      cursor: not-allowed;
+      background-color: #4a4e60;
+      box-shadow: none;
+      &:hover {
+        background-color: #4a4e60;
+      }
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}

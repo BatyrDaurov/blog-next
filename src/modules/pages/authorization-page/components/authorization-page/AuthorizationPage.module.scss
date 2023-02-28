@@ -1,0 +1,65 @@
+@import './../../../../../styles/mixins/breakpoint';
+.auth {
+  width: 100%;
+  min-height: 520px;
+  height: calc(100vh - 85px);
+  @include small-tablet {
+    height: 100%;
+    padding: 2rem 0;
+  }
+  &__container {
+    height: 100%;
+    gap: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include small-tablet {
+      max-width: 400px;
+      gap: 2rem;
+      flex-direction: column;
+    }
+  }
+  &__left {
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+  &__right {
+    @include small-tablet {
+      width: 100%;
+    }
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 2rem;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 150%;
+    text-transform: capitalize;
+    @include small-tablet {
+      font-size: 32px;
+      line-height: 120%;
+      margin-bottom: 1rem;
+    }
+  }
+  &__text {
+    margin: 0;
+    font-size: 18px;
+    line-height: 120%;
+    line-height: 150%;
+    text-transform: capitalize;
+    @include small-tablet {
+      font-size: 16px;
+      line-height: 130%;
+      margin-bottom: 1rem;
+    }
+  }
+  &__link {
+    font-weight: 500;
+    color: #4179e8;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -3,16 +3,17 @@ import { QueryState } from 'react-query/types/core/query';
 import { ArticleType } from '../../../../@types';
 import { ArticlesCard, ErrorMessage } from '../../../../components';
 import { useCustomSelector } from '../../../../hooks/store';
-import { PrimaryButton } from '../../../../UI/buttons';
 import ArticlesFilters from '../articles-filters/ArticlesFilters';
 import s from './ArticlesCatalog.module.scss';
 
 type Props = {
   queryState: QueryState;
   data: any;
+  token: string;
 };
 
-const ArticlesCatalog = ({ queryState, data }: Props) => {
+const ArticlesCatalog = ({ queryState, data, token }: Props) => {
+  //@ts-ignore
   const user = useCustomSelector((state) => state.LoginReducer.user);
   if (queryState.error) {
     return (
@@ -37,12 +38,9 @@ const ArticlesCatalog = ({ queryState, data }: Props) => {
               <h2>Loading...</h2>
             ) : (
               data.map((card: ArticleType) => (
-                <ArticlesCard key={card._id} article={card} />
+                <ArticlesCard key={card._id} article={card} token={token} />
               ))
             )}
-          </div>
-          <div className={s.catalog__btn}>
-            <PrimaryButton>More Articles</PrimaryButton>
           </div>
         </div>
       </div>

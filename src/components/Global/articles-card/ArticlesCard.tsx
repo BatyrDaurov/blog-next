@@ -1,17 +1,35 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArticleType } from '../../../@types';
+import { useCustomSelector } from '../../../hooks/store';
+import { deleteArticle } from '../../../utils/deleteArticle';
 import getFormatDate from '../../../utils/getFormatDate';
 import s from './ArticlesCard.module.scss';
 
 type Props = {
   article: ArticleType;
+  token?: string;
 };
 
-const ArticlesCard = ({ article }: Props) => {
+const ArticlesCard = ({ article, token }: Props) => {
+  const role = useCustomSelector((state) => state.LoginReducer.user.role);
   const date = getFormatDate(article.createdAt);
   return (
     <article className={s.article}>
+      {role === 'admin' && token && (
+        <button
+          onClick={deleteArticle(article._id, token)}
+          className={`btn-reset ${s.article__delete}`}
+          aria-label="Delete article button"
+        >
+          <Image
+            src="/icons/trash.svg"
+            width={30}
+            height={30}
+            alt="Delete article | Batyr.blog"
+          />
+        </button>
+      )}
       <div className={s.article__head}>
         {article.banner && (
           <div className={s.article__banner}>
@@ -29,7 +47,7 @@ const ArticlesCard = ({ article }: Props) => {
           </Link>
         </h4>
       </div>
-      <div className={s.article__footer}>
+      <footer className={s.article__footer}>
         <div className={`${s.author} ${s.article__author}`}>
           {article.author.avatarURL && (
             <Image
@@ -53,7 +71,7 @@ const ArticlesCard = ({ article }: Props) => {
           </div>
         </div>
         <p className={s.author__category}>{article.category}</p>
-      </div>
+      </footer>
     </article>
   );
 };

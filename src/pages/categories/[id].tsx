@@ -2,8 +2,8 @@ import { GetServerSideProps } from 'next';
 import { dehydrate } from 'react-query';
 import { CategoriesType } from '../../@types';
 import { PrimaryLayout } from '../../components';
-import { setUserData } from '../../modules/authorization-page/store/slice';
-import { CategoryPage, queryCategory } from '../../modules/category-page';
+import { setUserData } from '../../modules/pages/authorization-page/store/slice';
+import { CategoryPage, queryCategory } from '../../modules/pages/category-page';
 import { wrapper } from '../../store';
 import checkAuth from '../../utils/checkAuth';
 

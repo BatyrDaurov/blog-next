@@ -1,8 +1,8 @@
 import { GetServerSideProps } from 'next';
 import { parseCookies } from 'nookies';
 import { PrimaryLayout } from '../../components';
-import { ArticleCreatePage } from '../../modules/article-create-page';
-import { setUserData } from '../../modules/authorization-page/store/slice';
+import { ArticleCreatePage } from '../../modules/pages/article-create-page';
+import { setUserData } from '../../modules/pages/authorization-page/store/slice';
 import { wrapper } from '../../store';
 import checkAuth from '../../utils/checkAuth';
 

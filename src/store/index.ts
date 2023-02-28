@@ -1,7 +1,7 @@
 import { combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
 import { Action } from 'redux';
-import { LoginReducer } from './../modules/authorization-page';
+import { LoginReducer } from './../modules/pages/authorization-page';
 
 const rootReducer = combineReducers({
   LoginReducer,
