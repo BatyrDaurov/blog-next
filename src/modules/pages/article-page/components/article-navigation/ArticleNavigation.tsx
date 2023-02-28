@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { ButtonArticleSlide } from '../../../../UI/buttons';
+import { ButtonArticleSlide } from '../../../../../UI/buttons';
 import { getArticle } from '../../helpers/getArticle';
 import s from './ArticleNavigation.module.scss';
 
